@@ -37,6 +37,7 @@
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
     {"id":{"name":"Room1","path":"rooms/Room1/Room1.yy",},},
+    {"id":{"name":"spr_temp","path":"sprites/spr_temp/spr_temp.yy",},},
   ],
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
