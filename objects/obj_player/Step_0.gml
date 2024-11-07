@@ -1,19 +1,42 @@
 /// @description Governs Player movement and actions every frame
 // You can write your code in this editor
 
-var _input = rollback_get_input();
 
-if (_input.left) {
-	x -= move_speed;
-}
-if (_input.right) {
-	x += move_speed;
-}
-if (_input.up) {
-	y -= move_speed;
-}
-if (_input.down) {
-	y += move_speed;
+if (x_dir != 0) {
+	
+	if (x_dir < 0) {
+		if (!instance_place(x - curr_speed, y, obj_placeholder)) {
+			hspeed = -curr_speed
+		}
+	}
+	
+	if (x_dir > 0) {
+		if (!instance_place(x + curr_speed, y, obj_placeholder)) {
+			hspeed = curr_speed
+		}
+	}
+	
+} else {
+	hspeed = 0
 }
 
-image_angle = point_direction(x, y, _input.mb_x, _input.mb_y);
+if (y_dir != 0) {
+	
+	if (y_dir < 0) {
+		if (!instance_place(x, y - curr_speed, obj_placeholder)) {
+			vspeed = -curr_speed
+		}
+	}
+	
+	if (y_dir > 0) {
+		if (!instance_place(x, y + curr_speed, obj_placeholder)) {
+			vspeed = curr_speed
+		}
+	}
+} else {
+	vspeed = 0
+}
+
+
+
+image_angle = point_direction(x, y, mouse_x, mouse_y);
