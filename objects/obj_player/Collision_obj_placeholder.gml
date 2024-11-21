@@ -1,2 +1,2 @@
-/// @description Allows for Collision with all "Placeholder" objects
+/// @description Allows for Collision with all "Placeholder" objects (such as walls)
 

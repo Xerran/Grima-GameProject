@@ -10,8 +10,8 @@
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_bookshelf1",
-    "path":"objects/obj_bookshelf1/obj_bookshelf1.yy",
+    "name":"obj_searchable",
+    "path":"objects/obj_searchable/obj_searchable.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,

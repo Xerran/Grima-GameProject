@@ -1,18 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bookshelf1",
+  "%Name":"obj_searchable",
   "eventList":[],
   "managed":true,
-  "name":"obj_bookshelf1",
+  "name":"obj_searchable",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_searchable",
-    "path":"objects/obj_searchable/obj_searchable.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -30,10 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":true,
-  "spriteId":{
-    "name":"spr_bookshelf1",
-    "path":"sprites/spr_bookshelf1/spr_bookshelf1.yy",
-  },
+  "spriteId":null,
   "spriteMaskId":null,
   "visible":true,
 }

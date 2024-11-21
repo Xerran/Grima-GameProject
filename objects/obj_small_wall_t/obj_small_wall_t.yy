@@ -1,17 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bookshelf1",
+  "%Name":"obj_small_wall_t",
   "eventList":[],
   "managed":true,
-  "name":"obj_bookshelf1",
+  "name":"obj_small_wall_t",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
   "parentObjectId":{
-    "name":"obj_searchable",
-    "path":"objects/obj_searchable/obj_searchable.yy",
+    "name":"obj_placeholder",
+    "path":"objects/obj_placeholder/obj_placeholder.yy",
   },
   "persistent":false,
   "physicsAngularDamping":0.1,
@@ -31,8 +31,8 @@
   "resourceVersion":"2.0",
   "solid":true,
   "spriteId":{
-    "name":"spr_bookshelf1",
-    "path":"sprites/spr_bookshelf1/spr_bookshelf1.yy",
+    "name":"spr_small_wall_t",
+    "path":"sprites/spr_small_wall_t/spr_small_wall_t.yy",
   },
   "spriteMaskId":null,
   "visible":true,
