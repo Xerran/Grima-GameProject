@@ -29,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_wall_corner_inverted",
     "path":"sprites/spr_wall_corner_inverted/spr_wall_corner_inverted.yy",

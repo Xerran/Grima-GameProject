@@ -29,7 +29,7 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
     "name":"spr_small_wall_t",
     "path":"sprites/spr_small_wall_t/spr_small_wall_t.yy",
