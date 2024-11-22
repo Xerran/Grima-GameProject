@@ -5,13 +5,13 @@
 if (x_dir != 0) {
 	
 	if (x_dir < 0) {
-		if (!instance_place(x - curr_speed, y, obj_placeholder)) {
+		if (!instance_place(x - curr_speed, y, obj_solid)) {
 			hspeed = -curr_speed
 		}
 	}
 	
 	if (x_dir > 0) {
-		if (!instance_place(x + curr_speed, y, obj_placeholder)) {
+		if (!instance_place(x + curr_speed, y, obj_solid)) {
 			hspeed = curr_speed
 		}
 	}
@@ -23,13 +23,13 @@ if (x_dir != 0) {
 if (y_dir != 0) {
 	
 	if (y_dir < 0) {
-		if (!instance_place(x, y - curr_speed, obj_placeholder)) {
+		if (!instance_place(x, y - curr_speed, obj_solid)) {
 			vspeed = -curr_speed
 		}
 	}
 	
 	if (y_dir > 0) {
-		if (!instance_place(x, y + curr_speed, obj_placeholder)) {
+		if (!instance_place(x, y + curr_speed, obj_solid)) {
 			vspeed = curr_speed
 		}
 	}
