@@ -32,3 +32,14 @@ if (keyboard_check(vk_shift) and !is_sprinting) {
 } else if (!keyboard_check(vk_shift) and !is_sprinting and !stamina_shock) {
 	stamina += stamina_recovery
 }
+
+// Now we determine what the Player's sprite should be based on our inputs
+if (x_dir == 0 && y_dir == 0) {
+	sprite_index = spr_player_idle
+} else {
+	if (!is_sprinting) {
+		sprite_index = spr_player_walking
+	} else {
+		sprite_index = spr_player_running
+	}
+}

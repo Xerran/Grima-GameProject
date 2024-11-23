@@ -1,4 +1,3 @@
-/// @description Insert description here
-// You can write your code in this editor
+/// @description Governs ability to Sprint again
 
 is_sprinting = false

@@ -1,7 +1,10 @@
 /// @description Governs Player movement and actions every frame
-// You can write your code in this editor
 
+/*
+ * PLAYER MOVEMENT AND DIRECTIONALS
+ */
 
+// First we calculate Horizontal movement
 if (x_dir != 0) {
 	
 	if (x_dir < 0) {
@@ -20,6 +23,7 @@ if (x_dir != 0) {
 	hspeed = 0
 }
 
+// Next we calculate Vertical movement
 if (y_dir != 0) {
 	
 	if (y_dir < 0) {
@@ -37,3 +41,44 @@ if (y_dir != 0) {
 	vspeed = 0
 }
 
+// Now we determine where the Player is aiming for both the Gun object's direction and the Player
+// sprite's direction
+aim_dir = point_direction(x, y, mouse_x, mouse_y)
+
+pl_gun.image_angle = aim_dir
+
+// Now we shift the Player's X-scale and the Gun's Y-scale to fit with the Cursor's position, making
+// the Gun and Player "face" the Cursor
+if (aim_dir > 90 && aim_dir < 270) {
+	image_xscale = -2
+	pl_gun.image_yscale = -1
+} else {
+	image_xscale = 2
+	pl_gun.image_yscale = 1
+}
+
+// This will give us where the tip of the Gun object is at all times
+var _gun_tip_x = pl_gun.x + (6 * pl_gun.image_yscale)
+var _gun_tip_y = pl_gun.y - 1
+
+/*
+ * PLAYER ACTIONS
+ */
+
+// Player's Ability to Shoot
+if ( mouse_check_button(mb_left) ) {
+	if ( can_shoot ) {
+		can_shoot = false
+		alarm[1] = fire_rate
+		gun_distance = 5
+		
+		// Creates a new Bullet, setting its Speed and Direction
+		var _bullet_instance = instance_create_layer( _gun_tip_x, _gun_tip_y, "Bullets", obj_bullet )
+		with (_bullet_instance) {
+			speed = other.bullet_speed
+			direction = other.aim_dir
+			image_angle = other.aim_dir
+			owner_id = other
+		}
+	}
+}
