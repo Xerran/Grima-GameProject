@@ -27,6 +27,7 @@
   "name":"GRIMA",
   "resources":[
     {"id":{"name":"fnt_menu","path":"fonts/fnt_menu/fnt_menu.yy",},},
+    {"id":{"name":"fnt_searchable","path":"fonts/fnt_searchable/fnt_searchable.yy",},},
     {"id":{"name":"obj_bookshelf_short1","path":"objects/obj_bookshelf_short1/obj_bookshelf_short1.yy",},},
     {"id":{"name":"obj_bookshelf_short2","path":"objects/obj_bookshelf_short2/obj_bookshelf_short2.yy",},},
     {"id":{"name":"obj_bookshelf1","path":"objects/obj_bookshelf1/obj_bookshelf1.yy",},},
@@ -45,6 +46,7 @@
     {"id":{"name":"obj_game","path":"objects/obj_game/obj_game.yy",},},
     {"id":{"name":"obj_gun","path":"objects/obj_gun/obj_gun.yy",},},
     {"id":{"name":"obj_player","path":"objects/obj_player/obj_player.yy",},},
+    {"id":{"name":"obj_searchable_text","path":"objects/obj_searchable_text/obj_searchable_text.yy",},},
     {"id":{"name":"obj_searchable","path":"objects/obj_searchable/obj_searchable.yy",},},
     {"id":{"name":"obj_small_wall_cap","path":"objects/obj_small_wall_cap/obj_small_wall_cap.yy",},},
     {"id":{"name":"obj_small_wall_corner","path":"objects/obj_small_wall_corner/obj_small_wall_corner.yy",},},
@@ -97,8 +99,8 @@
   "resourceType":"GMProject",
   "resourceVersion":"2.0",
   "RoomOrderNodes":[
-    {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"roomId":{"name":"rm_title","path":"rooms/rm_title/rm_title.yy",},},
+    {"roomId":{"name":"rm_game","path":"rooms/rm_game/rm_game.yy",},},
     {"roomId":{"name":"rm_credits","path":"rooms/rm_credits/rm_credits.yy",},},
     {"roomId":{"name":"rm_end","path":"rooms/rm_end/rm_end.yy",},},
     {"roomId":{"name":"rm_gameover","path":"rooms/rm_gameover/rm_gameover.yy",},},

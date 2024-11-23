@@ -57,9 +57,17 @@ if (aim_dir > 90 && aim_dir < 270) {
 	pl_gun.image_yscale = 1
 }
 
-// This will give us where the tip of the Gun object is at all times
+// This will give us where the tip of the Gun object is at all times, for Bullet-spawning purposes
 var _gun_tip_x = pl_gun.x + (6 * pl_gun.image_yscale)
 var _gun_tip_y = pl_gun.y - 1
+
+// Finally, when the Player is invulnerable, we make them slightly see-through to signify they are
+// invulnerable. If they are not invulnerable, we make the Player fully opaque again
+if ( invulnerable ) {
+	image_alpha = 0.5
+} else { 
+	image_alpha = 1
+}
 
 /*
  * PLAYER ACTIONS
