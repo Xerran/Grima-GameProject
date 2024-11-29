@@ -17,3 +17,7 @@ path_delay = 30
 
 // Sets a timer for calculating the path to the Player
 path_timer = irandom(60)
+
+// General re-size of Sprite for use in game
+image_xscale = 2
+image_yscale = 2

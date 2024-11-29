@@ -1,9 +1,9 @@
 {
   "$GMObject":"",
-  "%Name":"obj_zombie",
+  "%Name":"obj_enemy_zombie",
   "eventList":[],
   "managed":true,
-  "name":"obj_zombie",
+  "name":"obj_enemy_zombie",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
@@ -31,9 +31,12 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_enemy_temp",
-    "path":"sprites/spr_enemy_temp/spr_enemy_temp.yy",
+    "name":"spr_zombie_idle",
+    "path":"sprites/spr_zombie_idle/spr_zombie_idle.yy",
   },
-  "spriteMaskId":null,
+  "spriteMaskId":{
+    "name":"spr_zombie_idle",
+    "path":"sprites/spr_zombie_idle/spr_zombie_idle.yy",
+  },
   "visible":true,
 }
