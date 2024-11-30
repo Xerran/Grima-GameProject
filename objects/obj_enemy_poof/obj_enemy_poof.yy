@@ -1,18 +1,17 @@
 {
   "$GMObject":"",
-  "%Name":"obj_bookshelf_short2",
-  "eventList":[],
+  "%Name":"obj_enemy_poof",
+  "eventList":[
+    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":7,"eventType":7,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
+  ],
   "managed":true,
-  "name":"obj_bookshelf_short2",
+  "name":"obj_enemy_poof",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_searchable_parent",
-    "path":"objects/obj_searchable_parent/obj_searchable_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -29,10 +28,10 @@
   "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
-  "solid":true,
+  "solid":false,
   "spriteId":{
-    "name":"spr_bookshelf_short2",
-    "path":"sprites/spr_bookshelf_short2/spr_bookshelf_short2.yy",
+    "name":"spr_enemy_poof",
+    "path":"sprites/spr_enemy_poof/spr_enemy_poof.yy",
   },
   "spriteMaskId":null,
   "visible":true,

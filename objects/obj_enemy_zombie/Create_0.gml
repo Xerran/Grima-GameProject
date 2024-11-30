@@ -13,5 +13,22 @@ spr_die = spr_zombie_die
 // Distance before we start Hunting the Player (if applicable)
 hunt_distance = 100
 
+/*
+ *  ATTACK VARIABLES
+ */ 
+
 // Sets the distance we stop from the Player
-attack_distance = 18
+attack_distance = 12
+
+// The frame we perform the attack
+attack_frame = 8
+
+// How long do we hold this frame?
+attack_hold = 40
+
+// Delay between attacks
+attack_delay = 100
+
+// How much damage this enemy deals
+damage = 20
+ 

@@ -1,3 +1,3 @@
-/// @description If Bullet hits an Enemy, destroys Bullet and damages Enemy
+/// @description If Bullet hits an Enemy, destroys Bullet
 
 instance_destroy()

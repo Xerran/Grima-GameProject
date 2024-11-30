@@ -1,7 +1,8 @@
 /// @description Creation event for the Player object
 
 // Basic stats for health, stamina, and stamina recovery
-hp = 100
+health_max = 100
+curr_hp = health_max
 stamina = 10
 stamina_recovery = 0.5
 stamina_drain = 2

@@ -10,4 +10,7 @@ range = 160
 owner_id = noone
 
 // How much knockback this Bullet incurs
-knockback_time = 5
+knockback_dis = 5
+
+// How long does the Enemy remain knocked back/How long before the Enemy recalculates a Path?
+knockback_time = 10

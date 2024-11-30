@@ -14,7 +14,6 @@ if ( room_get_name(room) == room_get_name(rm_game) ) {
 	global.mp_grid = mp_grid_create(0, 0, _width, _height, GS, GS)
 
 	// We need to add solid instances to Grid to allow for collisions
-	mp_grid_add_instances(global.mp_grid, obj_solid, false)
-	mp_grid_add_instances(global.mp_grid, obj_searchable, false)
+	mp_grid_add_instances(global.mp_grid, obj_solid, true)
 
 }
