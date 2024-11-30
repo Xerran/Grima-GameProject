@@ -2,7 +2,7 @@
 
 if ( player_nearby ) {
 	if ( keyboard_check_pressed( ord ( "E" ) ) ) {
-		my_text.hp
+		
 	}
 } else {
 	

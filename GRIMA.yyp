@@ -33,6 +33,7 @@
     {"id":{"name":"obj_bookshelf1","path":"objects/obj_bookshelf1/obj_bookshelf1.yy",},},
     {"id":{"name":"obj_bookshelf2","path":"objects/obj_bookshelf2/obj_bookshelf2.yy",},},
     {"id":{"name":"obj_bookshelf3","path":"objects/obj_bookshelf3/obj_bookshelf3.yy",},},
+    {"id":{"name":"obj_brazier","path":"objects/obj_brazier/obj_brazier.yy",},},
     {"id":{"name":"obj_bullet_hit","path":"objects/obj_bullet_hit/obj_bullet_hit.yy",},},
     {"id":{"name":"obj_bullet","path":"objects/obj_bullet/obj_bullet.yy",},},
     {"id":{"name":"obj_button_back","path":"objects/obj_button_back/obj_button_back.yy",},},

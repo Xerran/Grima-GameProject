@@ -1,20 +1,15 @@
 {
   "$GMObject":"",
-  "%Name":"obj_enemy_zombie",
-  "eventList":[
-    {"$GMEvent":"v1","%Name":"","collisionObjectId":null,"eventNum":0,"eventType":0,"isDnD":false,"name":"","resourceType":"GMEvent","resourceVersion":"2.0",},
-  ],
+  "%Name":"obj_brazier",
+  "eventList":[],
   "managed":true,
-  "name":"obj_enemy_zombie",
+  "name":"obj_brazier",
   "overriddenProperties":[],
   "parent":{
     "name":"Objects",
     "path":"folders/Objects.yy",
   },
-  "parentObjectId":{
-    "name":"obj_enemy_parent",
-    "path":"objects/obj_enemy_parent/obj_enemy_parent.yy",
-  },
+  "parentObjectId":null,
   "persistent":false,
   "physicsAngularDamping":0.1,
   "physicsDensity":0.5,
@@ -32,13 +27,7 @@
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,
-  "spriteId":{
-    "name":"spr_zombie_idle",
-    "path":"sprites/spr_zombie_idle/spr_zombie_idle.yy",
-  },
-  "spriteMaskId":{
-    "name":"spr_zombie_idle",
-    "path":"sprites/spr_zombie_idle/spr_zombie_idle.yy",
-  },
+  "spriteId":null,
+  "spriteMaskId":null,
   "visible":true,
 }
