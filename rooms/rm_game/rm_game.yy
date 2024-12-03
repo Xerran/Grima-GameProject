@@ -103,6 +103,7 @@
     {"name":"inst_492EAAB5","path":"rooms/rm_game/rm_game.yy",},
     {"name":"inst_5B6EC327","path":"rooms/rm_game/rm_game.yy",},
     {"name":"inst_77184B29","path":"rooms/rm_game/rm_game.yy",},
+    {"name":"inst_793D39F1","path":"rooms/rm_game/rm_game.yy",},
   ],
   "isDnd":false,
   "layers":[
@@ -214,6 +215,7 @@
         {"$GMRInstance":"v1","%Name":"inst_492EAAB5","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_492EAAB5","objectId":{"name":"obj_brazier","path":"objects/obj_brazier/obj_brazier.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":1344.0,"y":960.0,},
         {"$GMRInstance":"v1","%Name":"inst_5B6EC327","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_5B6EC327","objectId":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":768.0,"y":896.0,},
         {"$GMRInstance":"v1","%Name":"inst_77184B29","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_77184B29","objectId":{"name":"obj_enemy_zombie","path":"objects/obj_enemy_zombie/obj_enemy_zombie.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":896.0,"y":896.0,},
+        {"$GMRInstance":"v1","%Name":"inst_793D39F1","colour":4294967295,"frozen":false,"hasCreationCode":false,"ignore":false,"imageIndex":0,"imageSpeed":1.0,"inheritCode":false,"inheritedItemId":null,"inheritItemSettings":false,"isDnd":false,"name":"inst_793D39F1","objectId":{"name":"obj_enemy_cultist","path":"objects/obj_enemy_cultist/obj_enemy_cultist.yy",},"properties":[],"resourceType":"GMRInstance","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"x":288.0,"y":928.0,},
       ],"layers":[],"name":"Instances","properties":[],"resourceType":"GMRInstanceLayer","resourceVersion":"2.0","userdefinedDepth":false,"visible":true,},
     {"$GMRAssetLayer":"","%Name":"Inner_Shadow_Sprites","assets":[
         {"$GMRSpriteGraphic":"","%Name":"graphic_3B983AC3","animationSpeed":1.0,"colour":4294967295,"frozen":false,"headPosition":0.0,"ignore":false,"inheritedItemId":null,"inheritItemSettings":false,"name":"graphic_3B983AC3","resourceType":"GMRSpriteGraphic","resourceVersion":"2.0","rotation":0.0,"scaleX":1.0,"scaleY":1.0,"spriteId":{"name":"spr_shadow","path":"sprites/spr_shadow/spr_shadow.yy",},"x":608.0,"y":1056.0,},

@@ -6,8 +6,8 @@ y = my_zombie.y
 
 image_xscale = 1 * sign( my_zombie.image_xscale )
 
-// In case of accidental attachment to a foreign Zombie instance,
-// checks if my_zombie is out of Attack state
+// In case of accidental attachment to a foreign Zombie instance, checks
+// if my_zombie is out of Attack state, and if it is, then Destroys self
 if ( my_zombie.state != STATES.ATTACK ) {
 	instance_destroy()
 }

@@ -1,4 +1,4 @@
-/// @description Establishes Zombie sprites for each State, and the Hunting/Attacking distances
+/// @description Establishes Zombie sprites for each State, and the Hunting/Attacking variables
 
 // Inherit the parent event
 event_inherited();
