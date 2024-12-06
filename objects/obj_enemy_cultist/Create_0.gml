@@ -18,16 +18,16 @@ hunt_distance = 200
  */ 
 
 // Sets the distance we stop from the Player
-attack_distance = 72
+attack_distance = 100
 
 // The frame we perform the attack
-attack_frame = 8
+attack_frame = 6
 
 // How long do we hold this frame?
 attack_hold = 10
 
 // Delay between attacks
-attack_delay = 200
+attack_delay = 100
 
 // How much damage this enemy deals
 damage = 15

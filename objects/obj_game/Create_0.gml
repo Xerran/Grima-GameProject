@@ -8,3 +8,6 @@ global.mp_grid = 0
 wood_placement_delay = irandom(5)
 
 bullet_placement_delay = irandom(4)
+
+// If an obj_searchable_text instance has been created, prevents the creation of any other instances
+text_exists = false

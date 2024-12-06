@@ -86,7 +86,7 @@ if ( mouse_check_button(mb_left) ) {
 			speed = other.bullet_speed
 			direction = other.aim_dir
 			image_angle = other.aim_dir
-			owner_id = other
+			owner_id = obj_player
 		}
 	}
 }

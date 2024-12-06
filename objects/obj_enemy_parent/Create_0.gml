@@ -45,6 +45,9 @@ hurt_timer = 0
 // The distance between this Enemy instance and its current goal (Player/Brazier)
 curr_goal_distance = 0
 
+// Current distance to player
+distance_to_player = 0
+
 // Current Brazier the Enemy is moving towards
 my_brazier = noone
 
@@ -88,3 +91,12 @@ is_hazard = false
 
 // Keeps track of current obj_enemy_wave instance for Zombies
 my_wave = noone
+
+// The three Bullets that a Cultist has generated
+my_bullet1 = noone
+my_bullet2 = noone
+my_bullet3 = noone
+
+// Assigned spawn point for all Bullets
+bullet_spawn_x = 0
+bullet_spawn_y = 0
