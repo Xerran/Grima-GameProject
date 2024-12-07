@@ -1,7 +1,7 @@
 /// @description Assigns text and health
 
 // The text to display
-text = "Press E to Search"
+text = "Hold E to Search"
 
 // The time it takes to fully search the Searchable instance
 search_max = game_get_speed(gamespeed_fps) * 100

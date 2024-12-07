@@ -18,7 +18,7 @@ hunt_distance = 100
  */ 
 
 // Sets the distance we stop from the Player
-attack_distance = 12
+attack_distance = 32
 
 // The frame we perform the attack
 attack_frame = 8

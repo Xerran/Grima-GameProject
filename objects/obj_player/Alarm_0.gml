@@ -1,3 +1,3 @@
 /// @description Governs ability to Sprint again
 
-is_sprinting = false
+stamina_shock = false

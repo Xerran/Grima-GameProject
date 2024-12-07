@@ -151,8 +151,8 @@ switch ( state ) {
 					attack_dir = point_direction(x, y, obj_player.x, obj_player.y )
 			
 					// Get the Attack velocity components
-					a_velx += lengthdir_x( attack_distance, attack_dir )
-					a_vely += lengthdir_y( attack_distance, attack_dir )
+					a_velx += lengthdir_x( attack_distance / 2, attack_dir )
+					a_vely += lengthdir_y( attack_distance / 2, attack_dir )
 				
 					// Create an obj_enemy_wave for some visual flair
 					my_wave = instance_create_layer( x , y, "Bullets", obj_enemy_wave )

@@ -50,10 +50,10 @@ pl_gun.image_angle = aim_dir
 // Now we shift the Player's X-scale and the Gun's Y-scale to fit with the Cursor's position, making
 // the Gun and Player "face" the Cursor
 if (aim_dir > 90 && aim_dir < 270) {
-	image_xscale = -2
+	image_xscale = -facing
 	pl_gun.image_yscale = -1
 } else {
-	image_xscale = 2
+	image_xscale = facing
 	pl_gun.image_yscale = 1
 }
 
@@ -61,21 +61,92 @@ if (aim_dir > 90 && aim_dir < 270) {
 var _gun_tip_x = pl_gun.x + (6 * pl_gun.image_yscale)
 var _gun_tip_y = pl_gun.y - 1
 
-// Finally, when the Player is invulnerable, we make them slightly see-through to signify they are
-// invulnerable. If they are not invulnerable, we make the Player fully opaque again
-if ( invulnerable ) {
-	image_alpha = 0.5
-} else { 
-	image_alpha = 1
+
+/*
+ *
+ ********************
+ *                  *
+ *  PLAYER ACTIONS  *
+ *                  *
+ ********************
+ *
+ */
+ 
+/*
+ * DASH CODE
+ */
+
+// First we check to make sure the Player is not already Dashing, and if they are pressing
+// the Space button
+if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash ) {
+	
+	// First off, a Dash is only allowable if the Player is already moving, so
+	// we must make sure they are already moving in at least one direction
+	if ( x_dir != 0 or y_dir != 0 ) {
+		
+		// If Stamina is above 0, then we can allow a Dash
+		if ( stamina > 0 ) {
+		
+			// Set all appropriate variables for using the Dash action
+			is_dashing = true
+			curr_speed = dash_speed
+			stamina -= dash_cost
+			dash_time = dash_limit
+			invulnerable = true
+			
+			// Ensure that Stamina cannot recover while in a Dash
+			stamina_shock = true
+		
+			// Now we get the direction and distance we're moving while Dashing
+			dash_dir_x = x_dir
+			dash_dir_y = y_dir
+			
+			// Initialize our Dash array for use in the Dash action
+			dash_array = []
+	
+		}
+		
+	}
+
+// If the Player is already Dashing, then we do our Dashing things
+} else if ( is_dashing ) {
+	
+	// Adds a slight afterimage of the Player to make it appear like they are moving quickly
+	array_push( dash_array, { x : x, y : y, image_alpha: 0.75 } )
+	
+	// Have we dashed for our entire limit?
+	if ( dash_time-- < 0 ) {
+		is_dashing = false
+		can_dash = false
+		invulnerable = false
+		curr_speed = move_speed
+		alarm[3] = game_get_speed( gamespeed_fps )
+		image_index = 2
+		
+		// If subtracting dash_cost from Stamina causes Stamina to go below 0,
+		// make Stamina equal 0 and have a higher Stamina Shock timer
+		if ( stamina < 0 ) {
+		
+			stamina = 0
+			alarm[0] = game_get_speed( gamespeed_fps ) * 2
+		
+		// Otherwise we still initiate Stamina Shock, but with a lower timer
+		} else {
+			
+			alarm[0] = game_get_speed(gamespeed_fps)
+			
+		}
+	}
 }
 
 /*
- * PLAYER ACTIONS
+ * GUN CODE
  */
 
-// Player's Ability to Shoot
-if ( mouse_check_button(mb_left) ) {
-	if ( can_shoot ) {
+// We check if the Player has pressed the Mouse button, as well as make sure
+// they are not in the middle of a Dash
+if ( mouse_check_button(mb_left) and !is_dashing ) {
+	if ( can_shoot && bullets > 0 ) {
 		can_shoot = false
 		alarm[1] = fire_rate
 		gun_distance = 5
@@ -88,5 +159,8 @@ if ( mouse_check_button(mb_left) ) {
 			image_angle = other.aim_dir
 			owner_id = obj_player
 		}
+		
+		// Subtract a bullet from the Player's current amount
+		bullets--
 	}
 }
