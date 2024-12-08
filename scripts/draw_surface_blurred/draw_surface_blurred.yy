@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"draw_surface_blurred",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"draw_surface_blurred",
+  "parent":{
+    "name":"FastLights",
+    "path":"folders/Scripts/FastLights.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

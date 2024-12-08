@@ -15,5 +15,6 @@ if ( room_get_name(room) == room_get_name(rm_game) ) {
 
 	// We need to add solid instances to Grid to allow for collisions
 	mp_grid_add_instances(global.mp_grid, obj_solid, true)
-
+	
+	
 }

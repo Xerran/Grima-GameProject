@@ -11,8 +11,8 @@
   "name":"obj_searchable_text",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Searchable",
+    "path":"folders/Objects/Environmental/Interactable/Searchable.yy",
   },
   "parentObjectId":null,
   "persistent":false,

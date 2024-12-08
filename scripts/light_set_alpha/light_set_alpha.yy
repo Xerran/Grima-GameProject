@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"light_set_alpha",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_set_alpha",
+  "parent":{
+    "name":"Lights",
+    "path":"folders/Scripts/FastLights/Lights.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

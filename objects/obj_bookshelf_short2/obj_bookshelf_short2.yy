@@ -6,8 +6,8 @@
   "name":"obj_bookshelf_short2",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Searchable",
+    "path":"folders/Objects/Environmental/Interactable/Searchable.yy",
   },
   "parentObjectId":{
     "name":"obj_searchable_parent",

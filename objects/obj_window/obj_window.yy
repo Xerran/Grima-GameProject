@@ -6,8 +6,8 @@
   "name":"obj_window",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Survival-Oriented",
+    "path":"folders/Objects/Environmental/Interactable/Survival-Oriented.yy",
   },
   "parentObjectId":null,
   "persistent":false,

@@ -6,8 +6,8 @@
   "name":"obj_solid",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Walls",
+    "path":"folders/Objects/Environmental/Walls.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,8 +28,8 @@
   "resourceVersion":"2.0",
   "solid":false,
   "spriteId":{
-    "name":"spr_temp_wall",
-    "path":"sprites/spr_temp_wall/spr_temp_wall.yy",
+    "name":"spr_solid",
+    "path":"sprites/spr_solid/spr_solid.yy",
   },
   "spriteMaskId":null,
   "visible":true,

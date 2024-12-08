@@ -73,3 +73,8 @@ bullet_speed = 8
 // And we assign the Player's cursor to be the spr_cursor we created
 cursor_sprite = spr_cursor
 window_set_cursor(cr_none)
+
+// Finally, we create a new light for use with the Player
+my_light = light_create( global.system, spr_light, 0.25, c_gray, 0.5, 0, true )
+light_set_position( my_light, x, y )
+

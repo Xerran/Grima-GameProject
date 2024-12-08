@@ -17,5 +17,9 @@ if ( !other.invulnerable ) {
 		other.alarm[2] = game_get_speed( gamespeed_fps ) * 3
 	}
 	
+	// Destroy Light
+	light_delete( my_light )
+	
+	// Destroy Self
 	instance_destroy()
 }

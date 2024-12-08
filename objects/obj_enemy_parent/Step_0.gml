@@ -231,8 +231,10 @@ switch ( state ) {
 					}
 				
 					// Gradually increases image_alpha of my_wave
-					my_wave.image_alpha += 0.05
-				
+					if ( my_wave != noone ) {
+						my_wave.image_alpha += 0.05
+					}
+					
 					// While the Zombie is attacking the Player, they will dash forward, while
 					// when attacking a Brazier, they will not dash forward
 					if ( my_brazier == noone ) {
@@ -279,6 +281,11 @@ switch ( state ) {
 					// Make sure attack velocity components are reset to 0
 					a_velx = 0
 					a_vely = 0
+					
+					// Goes ahead and deletes the Wave
+					if ( my_wave != noone ) {
+						instance_destroy( my_wave )
+					}
 					
 					// Allow Enemy to finish Attack animation
 					attack_done = true

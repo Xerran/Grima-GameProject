@@ -61,6 +61,9 @@ if (aim_dir > 90 && aim_dir < 270) {
 var _gun_tip_x = pl_gun.x + (6 * pl_gun.image_yscale)
 var _gun_tip_y = pl_gun.y - 1
 
+// Here, we will set the current position of the Light following the Player
+light_set_position( my_light, x, y )
+
 
 /*
  *

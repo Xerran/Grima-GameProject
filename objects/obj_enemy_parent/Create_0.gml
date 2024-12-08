@@ -52,7 +52,7 @@ distance_to_player = 0
 my_brazier = noone
 
 // To prevent Enemy overlap, this is the distance the Enemies should be separated from each other
-separation_dis = 3
+separation_dis = 16
 
 /*
  *  ATTACK VARIABLES

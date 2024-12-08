@@ -30,12 +30,11 @@ if ( !is_dashing ) {
 }
 
 /*
- * 
  * SPRINTING CODE
- * 
- * This section determines if the Player is currently sprinting, as well as if they able to sprint
- * If a Player is not sprinting, an alarm is set. Afterwards, the Player's stamina will recover
  */
+ 
+// This section determines if the Player is currently sprinting, as well as if they able to sprint.
+// If a Player is not sprinting, an alarm is set. Afterwards, the Player's stamina will recover
 
 // First we check that the Player is not currently Dashing, disallowing all Sprinting actions
 // if the Player is in the middle of a Dash

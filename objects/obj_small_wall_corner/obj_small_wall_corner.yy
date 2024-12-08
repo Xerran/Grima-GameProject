@@ -6,8 +6,8 @@
   "name":"obj_small_wall_corner",
   "overriddenProperties":[],
   "parent":{
-    "name":"Objects",
-    "path":"folders/Objects.yy",
+    "name":"Walls",
+    "path":"folders/Objects/Environmental/Walls.yy",
   },
   "parentObjectId":{
     "name":"obj_solid",

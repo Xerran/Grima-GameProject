@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"light_caster_set_rotation",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_caster_set_rotation",
+  "parent":{
+    "name":"Casters",
+    "path":"folders/Scripts/FastLights/Casters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

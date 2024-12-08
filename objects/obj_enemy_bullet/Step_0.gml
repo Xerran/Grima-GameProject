@@ -24,3 +24,4 @@ if ( wait_time-- <= 0) {
 		speed = 0
 	}
 }
+

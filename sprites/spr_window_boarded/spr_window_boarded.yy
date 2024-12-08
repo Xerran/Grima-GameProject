@@ -25,8 +25,8 @@
   "nineSlice":null,
   "origin":4,
   "parent":{
-    "name":"Sprites",
-    "path":"folders/Sprites.yy",
+    "name":"Survival-Oriented",
+    "path":"folders/Sprites/Environmental/Interactable/Survival-Oriented.yy",
   },
   "preMultiplyAlpha":false,
   "resourceType":"GMSprite",

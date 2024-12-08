@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"light_set_enable",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_set_enable",
+  "parent":{
+    "name":"Lights",
+    "path":"folders/Scripts/FastLights/Lights.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

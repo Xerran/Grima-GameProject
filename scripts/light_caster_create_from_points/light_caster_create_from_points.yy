@@ -1,0 +1,13 @@
+{
+  "$GMScript":"v1",
+  "%Name":"light_caster_create_from_points",
+  "isCompatibility":false,
+  "isDnD":false,
+  "name":"light_caster_create_from_points",
+  "parent":{
+    "name":"Casters",
+    "path":"folders/Scripts/FastLights/Casters.yy",
+  },
+  "resourceType":"GMScript",
+  "resourceVersion":"2.0",
+}

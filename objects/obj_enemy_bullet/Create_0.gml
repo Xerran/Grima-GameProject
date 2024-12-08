@@ -21,3 +21,7 @@ wait_time = irandom(60) + 16
 // What is this Bullet's waiting point?
 wait_point_x = 0
 wait_point_y = 0
+
+// Create a light to follow this specific Bullet
+my_light = light_create( global.system, spr_light, 0.1, c_red, 0.4, 0, false )
+light_set_position( my_light, x, y )
