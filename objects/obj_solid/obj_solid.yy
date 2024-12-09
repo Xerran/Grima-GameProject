@@ -6,8 +6,8 @@
   "name":"obj_solid",
   "overriddenProperties":[],
   "parent":{
-    "name":"Walls",
-    "path":"folders/Objects/Environmental/Walls.yy",
+    "name":"Environmental",
+    "path":"folders/Objects/Environmental.yy",
   },
   "parentObjectId":null,
   "persistent":false,

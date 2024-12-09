@@ -9,7 +9,7 @@ stamina_max = 100
 // The stats for how much Stamina recovers each step, and how much Stamina is
 // drained while Sprinting/Dashing
 stamina_recovery = 0.5
-stamina_drain = 1
+stamina_drain = 0.5
 dash_cost = 25
 
 // Governs horizontal movement
@@ -62,7 +62,7 @@ image_xscale = facing
 image_yscale = 2
 
 // Now we create the Gun object for our Player to wield
-pl_gun = instance_create_layer(x, y, "Player", obj_gun)
+pl_gun = instance_create_layer( x, y, "Player", obj_gun )
 
 // Sets the distance the Gun will circle around the Player
 gun_distance = 15
@@ -74,7 +74,32 @@ bullet_speed = 8
 cursor_sprite = spr_cursor
 window_set_cursor(cr_none)
 
+// This is just to make sure Player does not immediately fire the gun upon entering Game
+alarm[1] = fire_rate
+
+// What is the offset for the position of the Player's Sword upon creation?
+sword_offset = 60
+
+// What is the current offset for the position?
+curr_offset = sword_offset
+
+// What is the rate of change for the offset of the Player's Sword?
+offset_change = 6
+
+// What was the original aim_dir for the Sword attack?
+orig_dir = 0
+
+// What distance is the Sword from the Player?
+sword_distance = 35
+
+// What is the Stamina cost of swinging the Sword?
+sword_cost = 15
+
+// This is the Sword object our Player shall wield
+pl_sword = noone
+
 // Finally, we create a new light for use with the Player
 my_light = light_create( global.system, spr_light, 0.25, c_gray, 0.5, 0, true )
 light_set_position( my_light, x, y )
+
 

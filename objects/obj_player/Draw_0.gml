@@ -14,6 +14,14 @@ if ( invulnerable and !is_dashing ) {
 	draw_sprite_ext( sprite_index, image_index, x, y, facing, 2, 0, c_white, 1 )
 	gpu_set_fog( 0, c_white, 0, 1 )
 	
+// If Player is about to regain ability to use Sword, also have them flash white to signify
+// they will soon be able to use the Sword again
+} else if( alarm[4] <= 3 and !can_swing ) {
+	
+	gpu_set_fog( 1, c_white, 0, 1 )
+	draw_sprite_ext( sprite_index, image_index, x, y, facing, 2, 0, c_white, 1 )
+	gpu_set_fog( 0, c_white, 0, 1 )
+
 // Draw Player as normal if all other cases are false, with added Dash animation if they are Dashing
 } else {
 	

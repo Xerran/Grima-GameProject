@@ -15,5 +15,8 @@ obj_game.text_exists = true
 // Sets the Searchable instance for this particular Text instance
 my_searchable = noone
 
+// Is this attached to "Searchable" instance, or to a Brazier?
+is_brazier_text = false
+
 // Is this a response text? Only existing because the Player has already searched the Searchable?
 response_text = false

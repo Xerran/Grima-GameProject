@@ -65,7 +65,7 @@ if ( !is_dashing ) {
 			is_sprinting = false
 			curr_speed = move_speed
 			stamina_shock = true
-			alarm[0] = game_get_speed(gamespeed_fps) * 2
+			alarm[0] = game_get_speed( gamespeed_fps ) * 2
 		
 		}
 
@@ -76,10 +76,10 @@ if ( !is_dashing ) {
 		curr_speed = move_speed
 		is_sprinting = false
 		stamina_shock = true
-		alarm[0] = game_get_speed(gamespeed_fps)
+		alarm[0] = game_get_speed( gamespeed_fps )
 
 	// If the Player is not Sprinting and their Stamina is ready to recover, then we let it recover
-	} else if ( !keyboard_check(vk_shift) and !is_sprinting and !stamina_shock ) {
+	} else if ( !keyboard_check( vk_shift ) and !is_sprinting and !stamina_shock ) {
 	
 		if ( stamina < stamina_max ) {
 			
@@ -97,12 +97,24 @@ if ( !is_dashing ) {
 
 
 // Now we determine what the Player's sprite should be based on our inputs
-if (x_dir == 0 && y_dir == 0) {
+// If they aren't moving, then they are Idle
+if ( x_dir == 0 && y_dir == 0 ) {
+	
 	sprite_index = spr_player_idle
+	
+// If they are moving, they are either running or walking
 } else {
+	
+	// In case they are Sprinting, we use the Running sprite
 	if ( is_sprinting ) {
+		
 		sprite_index = spr_player_running
+		
+	// Otherwise, they are Walking
 	} else {
+		
 		sprite_index = spr_player_walking
+		
 	}
+	
 }

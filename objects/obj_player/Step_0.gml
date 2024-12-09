@@ -5,60 +5,93 @@
  */
 
 // First we calculate Horizontal movement
-if (x_dir != 0) {
+if ( x_dir != 0 ) {
 	
-	if (x_dir < 0) {
-		if (!instance_place(x - curr_speed, y, obj_solid)) {
+	// Leftwards movement
+	if ( x_dir < 0 ) {
+		
+		// Prevents collisions with Solid objects
+		if ( !instance_place( x - curr_speed, y, obj_solid ) ) {
+			
 			hspeed = -curr_speed
+			
 		}
+		
 	}
 	
+	// Rightwards movement
 	if (x_dir > 0) {
-		if (!instance_place(x + curr_speed, y, obj_solid)) {
+		
+		// Prevents collisions with Solid objects
+		if ( !instance_place( x + curr_speed, y, obj_solid ) ) {
+			
 			hspeed = curr_speed
+			
 		}
+		
 	}
 	
+// No Horizontal movement
 } else {
+	
 	hspeed = 0
+	
 }
 
 // Next we calculate Vertical movement
 if (y_dir != 0) {
 	
+	// Upwards movement
 	if (y_dir < 0) {
-		if (!instance_place(x, y - curr_speed, obj_solid)) {
+		
+		// Prevents collisions with Solid objects
+		if ( !instance_place( x, y - curr_speed, obj_solid ) ) {
+			
 			vspeed = -curr_speed
+			
 		}
+		
 	}
 	
-	if (y_dir > 0) {
-		if (!instance_place(x, y + curr_speed, obj_solid)) {
+	// Downwards movement
+	if ( y_dir > 0 ) {
+		
+		// Prevents collisions with Solid objects
+		if ( !instance_place( x, y + curr_speed, obj_solid ) ) {
+			
 			vspeed = curr_speed
+			
 		}
+		
 	}
+	
+// No Vertical movement
 } else {
 	vspeed = 0
 }
 
 // Now we determine where the Player is aiming for both the Gun object's direction and the Player
 // sprite's direction
-aim_dir = point_direction(x, y, mouse_x, mouse_y)
+aim_dir = point_direction( x, y, mouse_x, mouse_y )
 
 pl_gun.image_angle = aim_dir
 
 // Now we shift the Player's X-scale and the Gun's Y-scale to fit with the Cursor's position, making
 // the Gun and Player "face" the Cursor
-if (aim_dir > 90 && aim_dir < 270) {
+if ( aim_dir > 90 && aim_dir < 270 ) {
+	
 	image_xscale = -facing
 	pl_gun.image_yscale = -1
+	
 } else {
+	
 	image_xscale = facing
 	pl_gun.image_yscale = 1
+	
 }
 
 // This will give us where the tip of the Gun object is at all times, for Bullet-spawning purposes
-var _gun_tip_x = pl_gun.x + (6 * pl_gun.image_yscale)
+var _gun_tip_x = pl_gun.x + ( 6 * pl_gun.image_yscale )
 var _gun_tip_y = pl_gun.y - 1
 
 // Here, we will set the current position of the Light following the Player
@@ -119,6 +152,7 @@ if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash ) {
 	
 	// Have we dashed for our entire limit?
 	if ( dash_time-- < 0 ) {
+		
 		is_dashing = false
 		can_dash = false
 		invulnerable = false
@@ -139,16 +173,19 @@ if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash ) {
 			alarm[0] = game_get_speed(gamespeed_fps)
 			
 		}
+		
 	}
+	
 }
 
 /*
  * GUN CODE
  */
 
-// We check if the Player has pressed the Mouse button, as well as make sure
+// We check if the Player has pressed the Left Mouse Button, as well as make sure
 // they are not in the middle of a Dash
-if ( mouse_check_button(mb_left) and !is_dashing ) {
+if ( mouse_check_button( mb_left ) and !is_dashing and !is_swinging ) {
+	
 	if ( can_shoot && bullets > 0 ) {
 		can_shoot = false
 		alarm[1] = fire_rate
@@ -157,13 +194,52 @@ if ( mouse_check_button(mb_left) and !is_dashing ) {
 		// Creates a new Bullet, setting its Speed and Direction
 		var _bullet_instance = instance_create_layer( _gun_tip_x, _gun_tip_y, "Bullets", obj_bullet )
 		with (_bullet_instance) {
+			
 			speed = other.bullet_speed
 			direction = other.aim_dir
 			image_angle = other.aim_dir
 			owner_id = obj_player
+			
 		}
 		
 		// Subtract a bullet from the Player's current amount
 		bullets--
+		
 	}
+	
+}
+
+/*
+ * SWORD CODE
+ */
+
+// We check if the Player has pressed the Right Mouse Button, as well as make sure
+// they are not in the middle of a Dash
+if ( mouse_check_button( mb_right ) and !is_dashing and !is_swinging ) {
+	
+	// Have to make sure we can Swing our Sword before we actually do
+	if ( can_swing ) {
+		
+		// We are in the middle of a Sword attack, so while we can Dash, we can't shoot
+		is_swinging = true
+		
+		// Make sure to subtract the appropriate Stamina
+		stamina -= sword_cost
+		
+		// This will cause Stamina Shock
+		stamina_shock = true
+	
+		// Create the Sword object
+		pl_sword = instance_create_layer( x, y, "Player", obj_sword )
+	
+		// Initialize the Scaling variables for the Sword
+		pl_sword.image_xscale = 2
+		pl_sword.image_yscale = 2
+		
+		// Finally, what was the aim_dir when we summoned the Sword?
+		orig_dir = aim_dir
+		
+		
+	}
+	
 }

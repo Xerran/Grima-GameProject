@@ -9,7 +9,7 @@ if (_player_distance < (sprite_height / 2) + 16) {
 	player_nearby = true
 	
 	if ( !text_created && !obj_game.text_exists && !searched ) {
-		my_text = instance_create_layer(x, y - 8, "Enemies", obj_searchable_text)
+		my_text = instance_create_layer(x, y - 8, "Text", obj_searchable_text)
 		text_created = true
 		
 		// Sets this Searchable as belonging to the Text instance

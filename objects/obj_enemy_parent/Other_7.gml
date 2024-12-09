@@ -10,6 +10,8 @@ switch ( state ) {
 	break;
 	// If Enemy is Dead, then once the dying animation is done, they should be destroyed
 	case STATES.DEAD:
+		
 		instance_destroy()
+		
 	break;
 }

@@ -1,0 +1,1 @@
+/// @description Allows Enemies to flash Red when damaged

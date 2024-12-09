@@ -11,8 +11,20 @@ if ( wait_time-- <= 0) {
 	
 	// Otherwise, slowly tracks/follows player
 	} else {
-		direction = point_direction( x, y, target_id.x, target_id.y )
-		speed = 3
+		
+		// Makes sure target hasn't been deleted/destroyed
+		if ( instance_exists( target_id ) ) {
+		
+			// Move towards our target if everything is a-okay
+			direction = point_direction( x, y, target_id.x, target_id.y )
+			speed = 3
+			
+		// If our target doesn't exist, then we should destroy the Bullets
+		} else {
+			
+			instance_destroy()
+			
+		}
 	}
 	
 // If time is not up, Bullet moves towards assigned waiting point

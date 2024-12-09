@@ -12,8 +12,22 @@ if ( !response_text ) {
 	// with Blessed Wood or Bullets
 	if ( curr_search_time >= search_max ) {
 	
-		my_searchable.searched = true
-	
+		// As we are co-opting this for use with Braziers, we will have to ensure we avoid any
+		// errors caused by that
+		if ( is_brazier_text ) {
+			
+			my_searchable.is_lit = true
+			my_searchable.curr_timer = my_searchable.timer_max
+			obj_player.blessed_wood--
+			my_searchable.text_created = false
+			
+		} else {
+			
+			my_searchable.searched = true
+			
+		}
+		
+		// Finally, we destroy this instance
 		instance_destroy()
 	
 	}

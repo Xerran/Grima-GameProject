@@ -3,6 +3,13 @@
 // Retrieves and stores distance to Player every step
 distance_to_player = distance_to_object( obj_player )
 
+// If a Brazier exists for us to track, then let's track it
+if ( instance_exists( my_brazier ) and my_brazier != noone ) {
+	
+	curr_goal_distance = distance_to_object( my_brazier )
+	
+}
+
 // Determines what behavior this Enemy instance should pursue every single step
 switch ( state ) {
 	// If the Enemy is currently in the Idle state
@@ -12,17 +19,27 @@ switch ( state ) {
 		
 		// Can Enemy start Hunting the Player? Are we already Hunting the Player?
 		if ( distance_to_player <= hunt_distance or hunting ) {
+			
 			hunting = true
+			my_brazier = noone
 			curr_goal_distance = distance_to_player
 			state = STATES.MOVE
+			
 		}
 		
 		// If we cannot find the Player, then we should find a Brazier to destroy
-		if ( !hunting ) {
+		if ( !hunting and obj_game.braziers > 0 ) {
+			
 			my_brazier = instance_nearest( x, y, obj_brazier )
 			curr_goal_distance = distance_to_object( my_brazier )
 			state = STATES.MOVE
-		} 
+			
+		// If all the Braziers are gone, we should Hunt the Player no matter what
+		} else {
+			
+			hunting = true
+			
+		}
 		
 	break;
 	
@@ -45,9 +62,11 @@ switch ( state ) {
 		// We begin by establishing if the Player is currently within Hunting distance, or if we are
 		// already Hunting the Player
 		if ( distance_to_player <= hunt_distance or hunting) {
+			
 			hunting = true
 			curr_goal_distance = distance_to_player
 			my_brazier = noone
+			
 		}
 		
 		// After this, we run through if the Enemy is Hunting the Player, or is moving towards a Brazier
@@ -55,8 +74,10 @@ switch ( state ) {
 		if ( hunting ) {
 			// Is the Player currently still within Hunting distance, and also too far to Attack?
 			if ( curr_goal_distance > attack_distance ) {
+				
 				// Should we go ahead and recalculate the path to the Player?
 				if ( path_timer-- <= 0 ) {
+					
 					// Reset our timer first, this time to the delay
 					path_timer = path_delay
 	
@@ -65,36 +86,61 @@ switch ( state ) {
 
 					// Start path if the Player is reachable
 					if (_found_player) {
+						
 						path_start( path, move_speed, path_action_stop, false )
+						
 					}
+					
 				}
+				
 			// Is Enemy close enough to attack?
 			} else if ( can_attack ) {
+				
 				path_end()
 				state = STATES.ATTACK
+				
 			} 
+			
 		// If we are not currently Hunting the Player, we should get on that Brazier
-		} else { 
+		} else {
+			
 			// If the Brazier is not close enough for us to Attack, then we should move closer
 			if ( curr_goal_distance > attack_distance ) {
+				
 				// Should we go ahead and recalculate the path to the Brazier?
 				if ( path_timer-- <= 0 ) {
+					
 					// Reset our timer first, this time to the delay
 					path_timer = path_delay
-	
-					// Can we make a path to the Brazier?
-					var _found_brazier = mp_grid_path( global.mp_grid, path, x, y, my_brazier.x, my_brazier.y, choose( 0, 1 ) )
+					
+					// Is our Brazier still in existence? 
+					if ( instance_exists( my_brazier ) ) {
+						
+						// Can we make a path to the Brazier?
+						var _found_brazier = mp_grid_path( global.mp_grid, path, x, y, my_brazier.x, my_brazier.y, choose( 0, 1 ) )
 
-					// Start path if the Brazier is reachable
-					if (_found_brazier) {
-						path_start( path, move_speed, path_action_stop, false )
+						// Start path if the Brazier is reachable
+						if (_found_brazier) {
+							
+							path_start( path, move_speed, path_action_stop, false )
+							
+						}
+						
+					// If it isn't, let's return to Idle and reevaluate our tactics
+					} else {
+						
+						state = STATES.IDLE
+						
 					}
 				}
 			// Looks like we've found our Brazier - let's Attack it!
 			} else if ( can_attack ) {
+				
 				path_end()
 				state = STATES.ATTACK
+				
 			}
+			
 		}
 	break;
 	
@@ -121,6 +167,7 @@ switch ( state ) {
 			vsp = 0
 		}
 		
+		// Once they are no longer Hurt, we return them to Idle so they can re-evaluate tactics
 		if ( hurt_timer-- <= 0 ) {
 			state = STATES.IDLE
 		}
@@ -147,8 +194,16 @@ switch ( state ) {
 					// Set the Zombie to be dangerous to touch
 					is_hazard = true
 					
-					// Get the Attack direction
-					attack_dir = point_direction(x, y, obj_player.x, obj_player.y )
+					// Get the Attack direction depending on what we're attacking
+					if ( my_brazier == noone ) {
+						
+						attack_dir = point_direction(x, y, obj_player.x, obj_player.y )
+						
+					}  else {
+						
+						attack_dir = point_direction(x, y, my_brazier.x, my_brazier.y )
+						
+					}
 			
 					// Get the Attack velocity components
 					a_velx += lengthdir_x( attack_distance / 2, attack_dir )

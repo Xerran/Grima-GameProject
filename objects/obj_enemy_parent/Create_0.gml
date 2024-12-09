@@ -51,8 +51,9 @@ distance_to_player = 0
 // Current Brazier the Enemy is moving towards
 my_brazier = noone
 
-// To prevent Enemy overlap, this is the distance the Enemies should be separated from each other
-separation_dis = 16
+// If an Enemy has been hit with a Sword, then they cannot be re-damaged by that Sword
+hit_with_sword = false
+
 
 /*
  *  ATTACK VARIABLES
@@ -100,3 +101,4 @@ my_bullet3 = noone
 // Assigned spawn point for all Bullets
 bullet_spawn_x = 0
 bullet_spawn_y = 0
+

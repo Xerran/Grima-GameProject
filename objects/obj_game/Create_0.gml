@@ -10,6 +10,6 @@ global.mp_grid = 0
 // If an obj_searchable_text instance has been created, prevents the creation of any other instances
 text_exists = false
 
-
-
+// How many Braziers are still in existence?
+braziers = 5
 

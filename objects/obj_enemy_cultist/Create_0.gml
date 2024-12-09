@@ -31,3 +31,4 @@ attack_delay = 100
 
 // How much damage this enemy deals
 damage = 15
+
