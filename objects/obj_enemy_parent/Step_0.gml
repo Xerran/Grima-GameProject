@@ -184,6 +184,7 @@ switch ( state ) {
 			
 			// Depending on Enemy Type, we will pursue one of two Attack behaviors
 			switch ( enemy_id ) {
+				
 				// Zombies will approach the Player/brazier, and attempt to punch them, creating a wave 
 				// and swiftly moving towards the target
 				case 1:
@@ -290,26 +291,22 @@ switch ( state ) {
 						my_wave.image_alpha += 0.05
 					}
 					
-					// While the Zombie is attacking the Player, they will dash forward, while
-					// when attacking a Brazier, they will not dash forward
-					if ( my_brazier == noone ) {
-						// Apply the attack velocity
-						x += a_velx 
-						y += a_vely 
+					// Apply the attack velocity
+					x += a_velx 
+					y += a_vely 
 
-						// Apply drag over time
-						a_velx *= 0.9
-						a_vely *= 0.9
+					// Apply drag over time
+					a_velx *= 0.9
+					a_vely *= 0.9
 
-						// To help simplify attack velocity, once a_velx and a_vely have been reduced sufficiently, 
-						// allow them to be reduced to 0
-						if ( abs( a_velx ) < 0.1 ) {
-							a_velx = 0
-						}
+					// To help simplify attack velocity, once a_velx and a_vely have been reduced sufficiently, 
+					// allow them to be reduced to 0
+					if ( abs( a_velx ) < 0.1 ) {
+						a_velx = 0
+					}
 
-						if ( abs( a_vely ) < 0.1 ) {
-							a_vely = 0
-						}
+					if ( abs( a_vely ) < 0.1 ) {
+						a_vely = 0
 					}
 				break;
 				

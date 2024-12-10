@@ -42,7 +42,7 @@ if ( !is_swinging ) {
 		// If it is below the Player, then it is set in front of the Player sprite
 		} else {
 		
-			pl_sword.depth = depth - 1
+			pl_sword.depth = depth - 3
 		
 		}
 	

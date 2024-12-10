@@ -118,3 +118,6 @@ if ( x_dir == 0 && y_dir == 0 ) {
 	}
 	
 }
+
+// Determine which way Sprite should be facing
+image_xscale = facing

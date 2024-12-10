@@ -80,12 +80,12 @@ pl_gun.image_angle = aim_dir
 // the Gun and Player "face" the Cursor
 if ( aim_dir > 90 && aim_dir < 270 ) {
 	
-	image_xscale = -facing
+	facing = -2
 	pl_gun.image_yscale = -1
 	
 } else {
 	
-	image_xscale = facing
+	facing = 2
 	pl_gun.image_yscale = 1
 	
 }

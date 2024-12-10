@@ -14,13 +14,21 @@ var _distance_y = abs(_target_y - y)
 
 /// We now move the Player as far as they can before hitting the solid
 repeat (_distance_x) {
+	
 	if ( !place_meeting(x + sign(_target_x - x), y, obj_solid) ) {
+		
 		x += sign( _target_x - x )
+		
 	}
+	
 }
 
 repeat (_distance_y) {
+	
 	if ( !place_meeting(x, y + sign(_target_y - y), obj_solid) ) {
+		
 		y += sign( _target_y - y )
+		
 	}
+	
 }
