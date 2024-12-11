@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_zombie_hurt2",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":0.895986,
+  "name":"snd_zombie_hurt2",
+  "parent":{
+    "name":"Enemies",
+    "path":"folders/Sounds/Enemies.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_zombie_hurt2.wav",
+  "type":2,
+  "volume":0.1,
+}

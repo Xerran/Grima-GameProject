@@ -8,7 +8,7 @@ stamina_max = 100
 
 // The stats for how much Stamina recovers each step, and how much Stamina is
 // drained while Sprinting/Dashing
-stamina_recovery = 0.5
+stamina_recovery = 1
 stamina_drain = 0.5
 dash_cost = 25
 
@@ -69,10 +69,6 @@ gun_distance = 15
 
 // Sets the rate at which Bullets travel
 bullet_speed = 8
-
-// And we assign the Player's cursor to be the spr_cursor we created
-cursor_sprite = spr_cursor
-window_set_cursor(cr_none)
 
 // This is just to make sure Player does not immediately fire the gun upon entering Game
 alarm[1] = fire_rate

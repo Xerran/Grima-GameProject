@@ -37,14 +37,17 @@ if ( _player_distance < search_distance ) {
 // Player sprite
 
 // If the Player is above this Instance, then it should appear to be in front of the Player
-if ( obj_player.y < y ) {
+// - unless we are exempt from this rule
+if ( obj_player.y < y and !depth_exempt_top) {
 	
 	depth = obj_player.depth - 1
 	
-// Otherwise, the Player should appear to be in front of this instance
-} else {
+// Otherwise, the Player should appear to be in front of this instance - unless we are
+// exempt from this rule
+} else if ( !depth_exempt_bottom ) {
 	
 	depth = obj_player.depth + 3
 	
 }
+
 

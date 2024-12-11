@@ -1,8 +1,8 @@
 {
   "$GMSprite":"",
   "%Name":"spr_altar",
-  "bboxMode":0,
-  "bbox_bottom":62,
+  "bboxMode":2,
+  "bbox_bottom":35,
   "bbox_left":3,
   "bbox_right":124,
   "bbox_top":10,

@@ -30,5 +30,5 @@ attack_hold = 40
 attack_delay = 100
 
 // How much damage this enemy deals
-damage = 20
+damage = 10
  

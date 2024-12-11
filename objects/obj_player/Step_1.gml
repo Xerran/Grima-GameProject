@@ -43,7 +43,9 @@ if ( !is_dashing ) {
 	// If a player is not Sprinting, and starts, then we check if their stamina is above 0
 	// and then let them Sprint
 	if ( keyboard_check( vk_shift ) and !is_sprinting ) {
-		if ( stamina > 0 ) {
+		
+		// We only actually drain Stamina if we are moving
+		if ( stamina > 0 && ( x_dir != 0 or y_dir != 0 ) ) {
 		
 			is_sprinting = true
 			curr_speed = sprint_speed

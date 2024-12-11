@@ -45,10 +45,17 @@ if ( !is_lit && curr_hp > 0) {
 } else if ( is_lit && curr_hp > 0 ) {
 	
 	// If we still have time left for this Brazier to be lit, then we reduce the timer
-	if ( curr_timer-- > 0 ) {
+	if ( curr_timer > 0 ) {
 		
 		is_lit = true
 		my_room.is_dark = false
+		
+		// For game balance's sake, the first Hour of gameplay does not cause Braziers to diminish
+		if ( obj_game.curr_hour >= 0 ) {
+			
+			curr_timer--
+			
+		}
 		
 		// Is the timer low enough for us to prompt a refill?
 		if ( curr_timer <= timer_max / 2 ) {
@@ -86,6 +93,7 @@ if ( !is_lit && curr_hp > 0) {
 					text_created = false
 			
 				}
+				
 			}
 			
 		}

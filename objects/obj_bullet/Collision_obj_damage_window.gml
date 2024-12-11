@@ -1,0 +1,1 @@
+/// @description Allows for Collisions

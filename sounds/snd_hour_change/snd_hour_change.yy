@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_hour_change",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":6.012021,
+  "name":"snd_hour_change",
+  "parent":{
+    "name":"Environmental",
+    "path":"folders/Sounds/Environmental.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_hour_change.wav",
+  "type":1,
+  "volume":0.25,
+}

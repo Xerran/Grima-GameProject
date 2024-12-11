@@ -31,6 +31,44 @@ if ( state != STATES.DEAD ) {
 		
 		// Finally, set the Enemy state to the Hurt state
 		state = STATES.HURT
+		
+		// Also play a Sound depending on the type of Enemy
+		switch ( enemy_id ) {
+			
+			// In case it's a Zombie
+			case 1:
+				
+				// We have 2 sounds, let's pick one randomly
+				switch ( irandom( 1 ) ) {
+					
+					// Zombie Hurt Sound 1
+					case 0:
+						
+						// We only want nearby Players to hear this
+						audio_play_sound_at( snd_zombie_hurt1, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+						
+					break;
+					
+					// Zombie Hurt Sound 2
+					case 1:
+					
+						// We only want nearby Players to hear this
+						audio_play_sound_at( snd_zombie_hurt2, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+						
+					break;
+				}
+			
+			break;
+			
+			// In case it's a Cultist
+			case 2:
+			
+				// We only want nearby Players to hear this
+				// audio_play_sound_at( snd_cultist_hurt1, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+			
+			break;
+			
+		}
 	
 	// If they have 0 health or less, then we Destroy the Enemy instance
 	} else {
@@ -39,5 +77,44 @@ if ( state != STATES.DEAD ) {
 		curr_hp = 0
 		image_index = 0
 		
+		// Also play a Sound depending on the type of Enemy
+		switch ( enemy_id ) {
+			
+			// In case it's a Zombie
+			case 1:
+				
+				// We have 2 sounds, let's pick one randomly
+				switch ( irandom( 1 ) ) {
+					
+					// Zombie Death Sound 1
+					case 0:
+						
+						// We only want nearby Players to hear this
+						audio_play_sound_at( snd_zombie_death1, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+						
+					break;
+					
+					// Zombie Death Sound 2
+					case 1:
+					
+						// We only want nearby Players to hear this
+						audio_play_sound_at( snd_zombie_death2, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+						
+					break;
+				}
+			
+			break;
+			
+			// In case it's a Cultist
+			case 2:
+			
+				// We only want nearby Players to hear this
+				audio_play_sound_at( snd_cultist_death, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+			
+			break;
+			
+		}
+		
 	}
+	
 }

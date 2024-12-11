@@ -9,8 +9,8 @@
   "name":"obj_lighting_controller",
   "overriddenProperties":[],
   "parent":{
-    "name":"Player",
-    "path":"folders/Objects/Player.yy",
+    "name":"Environmental",
+    "path":"folders/Objects/Environmental.yy",
   },
   "parentObjectId":null,
   "persistent":false,

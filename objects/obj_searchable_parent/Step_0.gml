@@ -28,8 +28,9 @@ if ( searched && has_item ) {
 			my_text.text = "You found some Bullets!" 
 			my_text.response_text = true
 			
-			// Now we actually give the Player some Bullets
-			obj_player.bullets += 6
+			// Now we actually give the Player some Bullets - a randomized amount
+			// between 2 and 5
+			obj_player.bullets += irandom_range( 2, 5 )
 			
 			// Text exists for a short time, then destroys self
 			alarm[0] = game_get_speed( gamespeed_fps ) * 4

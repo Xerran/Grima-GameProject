@@ -196,7 +196,7 @@ switch ( state ) {
 					is_hazard = true
 					
 					// Get the Attack direction depending on what we're attacking
-					if ( my_brazier == noone ) {
+					if ( my_brazier == noone && !instance_exists( my_brazier )) {
 						
 						attack_dir = point_direction(x, y, obj_player.x, obj_player.y )
 						
@@ -242,7 +242,7 @@ switch ( state ) {
 					my_bullet3 = instance_create_layer( bullet_spawn_x, bullet_spawn_y, "Bullets", obj_enemy_bullet )
 					
 					// Chooses target for Bullets to pursue
-					if ( my_brazier == noone ) {
+					if ( my_brazier == noone or !instance_exists( my_brazier )) {
 						
 						my_bullet1.target_id = instance_nearest( x, y, obj_player )
 						my_bullet2.target_id = instance_nearest( x, y, obj_player )
@@ -280,16 +280,25 @@ switch ( state ) {
 				
 				// In case Enemy is Zombie
 				case 1:
-					// Sets Sprite to correct image index
+				
+					// Sets Sprite to correct image index and XScale
 					image_index = attack_frame
 					if ( a_velx != 0 ) {
+						
 						image_xscale = sign( a_velx) * 2
+						
 					}
 				
 					// Gradually increases image_alpha of my_wave
-					if ( my_wave != noone ) {
+					if ( my_wave != noone && instance_exists( my_wave ) ) {
+						
 						my_wave.image_alpha += 0.05
+						
 					}
+					
+					// Set the previous x and y (This will help when in contact with Solids)
+					x_prev = x
+					y_prev = y
 					
 					// Apply the attack velocity
 					x += a_velx 
@@ -302,16 +311,22 @@ switch ( state ) {
 					// To help simplify attack velocity, once a_velx and a_vely have been reduced sufficiently, 
 					// allow them to be reduced to 0
 					if ( abs( a_velx ) < 0.1 ) {
+						
 						a_velx = 0
+						
 					}
 
 					if ( abs( a_vely ) < 0.1 ) {
+						
 						a_vely = 0
+						
 					}
+					
 				break;
 				
 				// In case Enemy is Cultist
 				case 2:
+				
 					// Sets Sprite to correct image index
 					image_index = attack_frame
 					
@@ -335,8 +350,10 @@ switch ( state ) {
 					a_vely = 0
 					
 					// Goes ahead and deletes the Wave
-					if ( my_wave != noone ) {
+					if ( my_wave != noone and instance_exists( my_wave ) ) {
+						
 						instance_destroy( my_wave )
+						
 					}
 					
 					// Allow Enemy to finish Attack animation

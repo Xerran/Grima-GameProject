@@ -33,7 +33,7 @@
     {"$GMObjectProperty":"v1","%Name":"wood_containers","filters":[],"listItems":[],"multiselect":false,"name":"wood_containers","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"bullet_containers","filters":[],"listItems":[],"multiselect":false,"name":"bullet_containers","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
     {"$GMObjectProperty":"v1","%Name":"empty_containers","filters":[],"listItems":[],"multiselect":false,"name":"empty_containers","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"0","varType":0,},
-    {"$GMObjectProperty":"v1","%Name":"total_containers","filters":[],"listItems":[],"multiselect":false,"name":"total_containers","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"56","varType":0,},
+    {"$GMObjectProperty":"v1","%Name":"total_containers","filters":[],"listItems":[],"multiselect":false,"name":"total_containers","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"58","varType":0,},
   ],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",

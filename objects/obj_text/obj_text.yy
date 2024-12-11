@@ -11,8 +11,8 @@
   "name":"obj_text",
   "overriddenProperties":[],
   "parent":{
-    "name":"Searchable",
-    "path":"folders/Objects/Environmental/Interactable/Searchable.yy",
+    "name":"Environmental",
+    "path":"folders/Objects/Environmental.yy",
   },
   "parentObjectId":null,
   "persistent":false,
@@ -28,9 +28,7 @@
   "physicsShape":1,
   "physicsShapePoints":[],
   "physicsStartAwake":true,
-  "properties":[
-    {"$GMObjectProperty":"v1","%Name":"my_searchable","filters":[],"listItems":[],"multiselect":false,"name":"my_searchable","rangeEnabled":false,"rangeMax":10.0,"rangeMin":0.0,"resourceType":"GMObjectProperty","resourceVersion":"2.0","value":"","varType":5,},
-  ],
+  "properties":[],
   "resourceType":"GMObject",
   "resourceVersion":"2.0",
   "solid":false,

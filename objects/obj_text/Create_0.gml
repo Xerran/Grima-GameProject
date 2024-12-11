@@ -4,7 +4,7 @@
 text = "Hold E to Search"
 
 // The time it takes to fully search the Searchable instance
-search_max = game_get_speed( gamespeed_fps ) * 100
+search_max = 100
 
 // The search time a Player has already spent searching this instance
 curr_search_time = 0
@@ -20,6 +20,9 @@ is_brazier_text = false
 
 // Is this attached to a Window?
 is_window_text = false
+
+// Is this attached to an Altar?
+is_altar_text = false
 
 // Is this a refill text?
 is_refill = false

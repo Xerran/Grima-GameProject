@@ -26,8 +26,8 @@ light_timer_max = game_get_speed(gamespeed_fps) * 100
 // The amount of time a Player has already spent lighting this Brazier
 curr_light_time = 0
 
-// How long is this Brazier lit for when it is refilled?
-timer_max = game_get_speed( gamespeed_fps ) * 90
+// How long is this Brazier lit for when it is refilled? (Currently set to 120 seconds)
+timer_max = game_get_speed( gamespeed_fps ) * 120
 
 // How long does the Brazier have left until it is unlit?
 curr_timer = 0
