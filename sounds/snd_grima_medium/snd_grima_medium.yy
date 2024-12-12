@@ -1,0 +1,25 @@
+{
+  "$GMSound":"",
+  "%Name":"snd_grima_medium",
+  "audioGroupId":{
+    "name":"audiogroup_default",
+    "path":"audiogroups/audiogroup_default",
+  },
+  "bitDepth":1,
+  "bitRate":128,
+  "compression":0,
+  "conversionMode":0,
+  "duration":5.505238,
+  "name":"snd_grima_medium",
+  "parent":{
+    "name":"GRIMA",
+    "path":"folders/Sounds/GRIMA.yy",
+  },
+  "preload":false,
+  "resourceType":"GMSound",
+  "resourceVersion":"2.0",
+  "sampleRate":44100,
+  "soundFile":"snd_grima_medium.mp3",
+  "type":1,
+  "volume":0.25,
+}

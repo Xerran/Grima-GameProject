@@ -202,6 +202,9 @@ if ( mouse_check_button( mb_left ) and !is_dashing and !is_swinging ) {
 			
 		}
 		
+		// Play the gunshot sound
+		audio_play_sound( snd_gunshot, 1, false, 0.3 )
+		
 		// Subtract a bullet from the Player's current amount
 		bullets--
 		

@@ -68,7 +68,7 @@ if ( state != STATES.DEAD and !hit_with_sword ) {
 			case 2:
 			
 				// We only want nearby Players to hear this
-				// audio_play_sound_at( snd_cultist_hurt1, x, y, 0, 50, 160, 1, false, 1, 0.5 )
+				audio_play_sound_at( snd_cultist_hurt, x, y, 0, 50, 160, 1, false, 1, 0.5 )
 			
 			break;
 			

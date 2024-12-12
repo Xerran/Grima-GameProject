@@ -3,6 +3,12 @@
 // Initialize the Global Movement Planning Grid for Enemies
 global.mp_grid = 0
 
+// Intitialize global.game_over
+global.game_over = false
+
+// Make Game Window full screen
+window_set_fullscreen( true )
+
 // If an obj_searchable_text instance has been created, prevents the creation of any other instances
 text_exists = false
 

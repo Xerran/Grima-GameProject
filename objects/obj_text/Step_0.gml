@@ -42,7 +42,7 @@ if ( !response_text ) {
 			if ( my_instance.state == WINDOW.TRAPPED ) {
 				
 				// Uh oh... Player is now very, very dead
-				room_goto( rm_death )
+				global.game_over = true
 				
 			// Otherwise, proceed as normal
 			} else {

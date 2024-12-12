@@ -135,12 +135,32 @@ switch ( curr_hour ) {
 	break;
 	
 	
-	// In case it is 12 AM - lowest Enemy spawns, lowest Window-barricade damage, 
-	// low Grima aggression
+	// In case it is 12 AM - no Enemy spawns, no Window-barricade damage, low Grima aggression
 	case 0:
 		
 		// Change the current Hour display
 		curr_hour_text = "12 AM"
+		
+		// Set our current Grima-related values
+		curr_aggression = low_aggression
+		curr_move_success = low_move_success
+		
+		// Set our current Window-related values
+		curr_spawn_rate = PREP
+		curr_engagement = PREP
+		curr_success_rate = PREP
+		curr_damage = PREP
+		curr_damage_rate = PREP
+		
+		
+	break;
+	
+	
+	// In case it is 1 AM - lowest Enemy spawns, lowest Window-barricade damage, low Grima aggression
+	case 1:
+		
+		// Change the current Hour display
+		curr_hour_text = " 1 AM"
 		
 		// Set our current Grima-related values
 		curr_aggression = low_aggression
@@ -157,29 +177,7 @@ switch ( curr_hour ) {
 	break;
 	
 	
-	// In case it is 1 AM - low Enemy spawns, low Window-barricade damage, low Grima aggression
-	case 1:
-		
-		// Change the current Hour display
-		curr_hour_text = " 1 AM"
-		
-		// Set our current Grima-related values
-		curr_aggression = low_aggression
-		curr_move_success = low_move_success
-		
-		// Set our current Window-related values
-		curr_spawn_rate = low_spawn_rate
-		curr_engagement = low_engagement
-		curr_success_rate = low_success_rate
-		curr_damage = low_damage
-		curr_damage_rate = low_damage_rate
-		
-		
-	break;
-	
-	
 	// In case it is 2 AM - low Enemy spawns, low Window-barricade damage, low Grima aggression
-	// (no change from 1 AM)
 	case 2:
 		
 		// Change the current Hour display
@@ -200,7 +198,7 @@ switch ( curr_hour ) {
 	break;
 	
 	
-	// In case it is 3 AM - medium Enemy spawns, medium Window-barricade damage, 
+	// In case it is 3 AM - low Enemy spawns, low Window-barricade damage, 
 	// medium Grima aggression
 	case 3:
 		
@@ -212,18 +210,18 @@ switch ( curr_hour ) {
 		curr_move_success = medium_move_success
 		
 		// Set our current Window-related values
-		curr_spawn_rate = medium_spawn_rate
-		curr_engagement = medium_engagement
-		curr_success_rate = medium_success_rate
-		curr_damage = medium_damage
-		curr_damage_rate = medium_damage_rate
+		curr_spawn_rate = low_spawn_rate
+		curr_engagement = low_engagement
+		curr_success_rate = low_success_rate
+		curr_damage = low_damage
+		curr_damage_rate = low_damage_rate
 		
 		
 	break;
 	
 	
 	// In case it is 4 AM - medium Enemy spawns, medium Window-barricade damage, 
-	// medium Grima aggression (no change from 3 AM)
+	// medium Grima aggression 
 	case 4:
 		
 		// Change the current Hour display
