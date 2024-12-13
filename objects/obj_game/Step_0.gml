@@ -152,6 +152,15 @@ switch ( curr_hour ) {
 		curr_damage = PREP
 		curr_damage_rate = PREP
 		
+		// Change the Music
+		audio_stop_sound( snd_prep_hour_music )
+		if ( !audio_is_playing( snd_grima_music ) ) {
+			
+			audio_play_sound( snd_grima_music, 2, true, 0.1, 0 )
+			
+		}
+		
+		
 		
 	break;
 	

@@ -118,7 +118,14 @@ switch ( state ) {
 						case 0:
 							
 							// We only want nearby Players to hear this
-							audio_play_sound_at( snd_zombie1, x, y, 0, 100, 320, 1, false, 1, 0.5 )
+							if ( player_distance < range ) {
+						
+								// Set the gain to grow louder the closer the Player is
+								var _gain = ( range - player_distance ) / range * 2
+						
+								audio_play_sound_at( snd_zombie1, x, y, 0, 100, 320, 1, false, 1, _gain )
+						
+							}
 							
 						break;
 						
@@ -126,7 +133,14 @@ switch ( state ) {
 						case 1:
 							
 							// We only want nearby Players to hear this
-							audio_play_sound_at( snd_zombie2, x, y, 0, 100, 320, 1, false, 1, 0.5 )
+							if ( player_distance < range ) {
+						
+								// Set the gain to grow louder the closer the Player is
+								var _gain = ( range - player_distance ) / range * 2
+						
+								audio_play_sound_at( snd_zombie2, x, y, 0, 100, 320, 1, false, 1, _gain )
+						
+							}
 							
 						break;
 						
@@ -134,7 +148,14 @@ switch ( state ) {
 						case 2:
 							
 							// We only want nearby Players to hear this
-							audio_play_sound_at( snd_zombie3, x, y, 0, 100, 320, 1, false, 1, 0.5 )
+							if ( player_distance < range ) {
+						
+								// Set the gain to grow louder the closer the Player is
+								var _gain = ( range - player_distance ) / range * 2
+						
+								audio_play_sound_at( snd_zombie3, x, y, 0, 100, 320, 1, false, 1, _gain )
+						
+							}
 							
 						break;
 						
@@ -171,9 +192,16 @@ switch ( state ) {
 				
 				// Window Damage Sound 1
 				case 0:
-				
+					
 					// We only want nearby Players to hear this
-					audio_play_sound_at( snd_window_damage1, x, y, 0, 100, 320, 1, false, 1)
+					if ( player_distance < range ) {
+						
+						// Set the gain to grow louder the closer the Player is
+						var _gain = ( range - player_distance ) / range * 2
+						
+						audio_play_sound_at( snd_window_damage1, x, y, 0, 50, 240, _gain, false, 1)
+						
+					}
 				
 				break;
 				
@@ -181,7 +209,14 @@ switch ( state ) {
 				case 1:
 				
 					// We only want nearby Players to hear this
-					audio_play_sound_at( snd_window_damage2, x, y, 0, 100, 320, 1, false, 1)
+					if ( player_distance < range ) {
+						
+						// Set the gain to grow louder the closer the Player is
+						var _gain = ( range - player_distance ) / range * 2
+						
+						audio_play_sound_at( snd_window_damage2, x, y, 0, 50, 240, _gain, false, 1)
+						
+					}
 				
 				break;
 				

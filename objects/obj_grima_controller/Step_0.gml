@@ -16,6 +16,75 @@ if ( show_overlay ) {
 		
 	}
 	
+	// Does the Player wish to repel Grima with a Flash?
+	if ( keyboard_check_pressed( ord( "F" ) ) && can_flash ) {
+		
+		// Set can_flash to false
+		can_flash = false
+		
+		// Set the Flash effect timer for the drawing
+		alarm[ 0 ] = flash_effect_timer
+		
+		// Set the Flash recharge timer 
+		flash_timer = 0
+		
+		// Now we check if this actually had any effect on Grima depending on his State
+		switch ( state ) {
+			
+			// In case of Medium State - Grima is forced back to the Waiting State
+			case GRIMA.MEDIUM:
+				
+				state = GRIMA.WAITING
+				curr_room = 0
+				move_timer = aggression
+				
+				// Also, play the Grima_Laugh sound - Player should have waited
+				audio_play_sound( snd_grima_laugh, 1, false, 0.25, 0, 0.7 )
+				
+			break;
+			
+			// In case of Close State - Grima is forced back to the Waiting State, but
+			// with a longer Movement Timer
+			case GRIMA.CLOSE:
+				
+				state = GRIMA.WAITING
+				curr_room = 0
+				move_timer = aggression * 2
+				
+				// Also, play the Grima_Hurt sound - Player really showed Grima!
+				audio_play_sound( snd_grima_hurt, 1, false, 0.25, 0, 0.7 )
+				
+			break;
+			
+		}
+		
+	}
+	
+	// Check the Keyboard to see if Player wants to switch Cameras that way
+	if ( keyboard_check_pressed( vk_numpad1 ) or keyboard_check_pressed( ord( "1" ) ) ) {
+		
+		curr_camera = 1
+		
+	}
+	
+	if ( keyboard_check_pressed( vk_numpad2 ) or keyboard_check_pressed( ord( "2" ) ) ) {
+		
+		curr_camera = 2
+		
+	}
+	
+	if ( keyboard_check_pressed( vk_numpad3 ) or keyboard_check_pressed( ord( "3" ) ) ) {
+		
+		curr_camera = 3
+		
+	}
+	
+	if ( keyboard_check_pressed( vk_numpad1 ) or keyboard_check_pressed( ord( "4" ) ) ) {
+		
+		curr_camera = 4
+		
+	}
+	
 // Otherwise, we are simply waiting for the Player to open the Overlay
 } else {
 	
@@ -67,12 +136,11 @@ if ( curr_hour != -1 ) {
 					// Finally, let's not forget to go to the Distant State
 					state = GRIMA.DISTANT
 					
-				// Otherwise, we remain waiting
-				} else {
-					
-					move_timer = aggression
-					
-				}
+				
+				} 
+				
+				// Regardless of success or failure, we reset the Movement Timer
+				move_timer = aggression
 				
 			}
 			
@@ -187,14 +255,11 @@ if ( curr_hour != -1 ) {
 						}
 						
 					}
-					
-					
-				// Otherwise, we wait for another chance to make a Move
-				} else {
-					
-					move_timer = aggression
-					
-				}
+				
+				} 
+				
+				// Regardless of success or failure, we reset the Movement Timer
+				move_timer = aggression
 				
 			}
 			
@@ -216,18 +281,20 @@ if ( curr_hour != -1 ) {
 					// approached a Room
 					audio_play_sound( snd_grima_close, 1, false, 0.3, 0, 0.8 )
 					
-					// Let's reset our Windows_Trapped count
-					windows_trapped = 0
+					// Let's reset our Windows_Count
+					windows_count = 0
+					
+					// We also reset the move_timer
+					move_timer = aggression
 					
 					// Finally, let's not forget to go to the Close State
 					state = GRIMA.CLOSE
 					
-				// Otherwise, we wait for another chance to make a Move
-				} else {
-					
-					move_timer = aggression
-					
-				}
+				} 
+				
+				
+				// Regardless of success or failure, we reset the Movement Timer
+				move_timer = aggression
 				
 			}
 			
@@ -242,16 +309,88 @@ if ( curr_hour != -1 ) {
 				
 				// Our success depends on the current Movement Success Rate; in the case of 0,
 				// our Action was a success!
-				if ( irandom( move_success_rate ) == 0 ) {
+				if ( irandom( move_success_rate ) == 0 && !no_valid_target ) {
+					
+					// The state of our current Window will determine our Action
+					switch ( curr_window.state ) {
+						
+						// In case the Window is Blocked
+						case WINDOW.BLOCKED:
+							
+							// Destroy the Block, and instantly Trap the Window
+							curr_window.state = WINDOW.TRAPPED
+							
+							// Let's also play a sound to signal that the Window is being Damaged
+							switch( irandom( 1 ) ) {
+				
+								// Window Damage Sound 1
+								case 0:
+					
+									// We only want nearby Players to hear this
+									if ( curr_window.player_distance < 500 ) {
+						
+										// Set the gain to grow louder the closer the Player is
+										var _gain = ( 500 - curr_window.player_distance ) / 500
+						
+										audio_play_sound_at( snd_window_damage1, curr_window.x, curr_window.y, 0, 50, 240, _gain, false, 1)
+						
+									}
+				
+								break;
+				
+								// Window Damage Sound 2
+								case 1:
+				
+									// We only want nearby Players to hear this
+									if ( curr_window.player_distance < 500 ) {
+						
+										// Set the gain to grow louder the closer the Player is
+										var _gain = ( 500 - curr_window.player_distance ) / 500
+						
+										audio_play_sound_at( snd_window_damage2, curr_window.x, curr_window.y, 0, 50, 240, _gain, false, 1)
+						
+									}
+				
+								break;
+				
+							}
+						
+						// In case the Window is Open
+						case WINDOW.TRAPPED:
+							
+							// We simply change the Window State to Trapped
+							curr_window.state = WINDOW.TRAPPED
+							
+						break;
+						
+					}
 					
 					
+				// If there is no valid target for Grima in his current Room, then
+				// Grima will return to the Distant State in the next sequential Room
+				} else if ( no_valid_target ) {
 					
-				// Otherwise, we wait for another chance to take an Action
-				} else {
+					// Let's play a noise to let the Player know that Grima is switching
+					// his Room
+					audio_play_sound( snd_grima_laugh, 1, false, 0.25, 0, 0.7 )
 					
-					move_timer = aggression
+					state = GRIMA.DISTANT
 					
-				}
+					// If the current Room's ID is 4 (for the Bottom Right Room), Grima goes to the
+					// Top Left Room
+					if ( curr_room++ > br_room ) {
+						
+						curr_room = tl_room
+						
+					}
+					
+					// Also reset our No_Valid_Target to false
+					no_valid_target = false
+				
+				} 
+				
+				// Regardless of success or failure, we reset the Movement Timer
+				move_timer = aggression
 				
 			}
 			

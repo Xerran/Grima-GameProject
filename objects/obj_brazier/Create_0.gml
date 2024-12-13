@@ -20,12 +20,6 @@ text_created = false
 // Is the Player currently nearby?
 player_nearby = false
 
-// The time it takes to fully light the Brazier
-light_timer_max = game_get_speed(gamespeed_fps) * 100
-
-// The amount of time a Player has already spent lighting this Brazier
-curr_light_time = 0
-
 // How long is this Brazier lit for when it is refilled? (Currently set to 120 seconds)
 timer_max = game_get_speed( gamespeed_fps ) * 120
 
@@ -53,4 +47,7 @@ my_room = instance_nearest( x, y, obj_room )
 
 // Is this Brazier currently able to be damaged?
 invulnerable = false
+
+// Have we played a sound yet?
+played_sound = false
 

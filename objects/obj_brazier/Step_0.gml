@@ -50,10 +50,25 @@ if ( !is_lit && curr_hp > 0) {
 		is_lit = true
 		my_room.is_dark = false
 		
+		
 		// For game balance's sake, the first Hour of gameplay does not cause Braziers to diminish
 		if ( obj_game.curr_hour >= 0 ) {
 			
 			curr_timer--
+			
+		}
+		
+		// Is Grima currently in the Close State?
+		if ( obj_grima_controller.state == GRIMA.CLOSE ) {
+			
+			// If so, does this Brazier's ID match the ID of the Room that Grima is
+			// attached to?
+			if ( brazier_id == obj_grima_controller.curr_room ) {
+				
+				// If it does, we actually diminish the timer twice as fast
+				curr_timer--
+				
+			}
 			
 		}
 		
@@ -104,6 +119,8 @@ if ( !is_lit && curr_hp > 0) {
 		is_lit = false
 		obj_game.lit--
 		my_room.is_dark = true
+		
+		audio_stop_sound( snd_brazier )
 		
 	}
 	

@@ -16,13 +16,30 @@ if ( curr_hour != obj_game.curr_hour ) {
 }
 
 /*
- * OVERLAY POSITION SECTION
+ * OVERLAY POSITION, STATIC OVERLAY, FLASH TIMER SECTION
  */ 
  
 // Update current X and Y to be at the center of the view
 x = camera_get_view_x( camera_id ) + ( camera_get_view_width( camera_id ) / 2 )
 y = camera_get_view_y( camera_id ) + ( camera_get_view_height( camera_id ) / 2 )
 
+// Update the frame that the Static Overlay is on
+if ( ( static_frame++ / 8 ) > 7 ) {
+	
+	static_frame = 0
+	
+}
+
+// While we're here, if the Flash Timer is less than max, let's recharge it
+if ( flash_timer < flash_charge ) {
+	
+	flash_timer++
+	
+} else {
+	
+	can_flash = true
+	
+}
 
 
 /*

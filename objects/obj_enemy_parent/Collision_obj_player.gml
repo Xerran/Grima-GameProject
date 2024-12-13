@@ -20,6 +20,28 @@ if ( is_hazard ) {
 			other.invulnerable = true
 
 			other.alarm[2] = game_get_speed( gamespeed_fps ) * 3
+			
+			// We have 2 Player Hurt sounds, let's pick one randomly
+			switch ( irandom( 1 ) ) {
+					
+				// Player Hurt Sound 1
+				case 0:
+						
+					audio_play_sound( snd_player_hurt1, 1, false, 0.4 )
+						
+				break;
+					
+				// Player Hurt Sound 2
+				case 1:
+					
+					audio_play_sound( snd_player_hurt2, 1, false, 0.4 )
+						
+				break;
+			}
+			
 		}
+		
 	}
+	
 }
+

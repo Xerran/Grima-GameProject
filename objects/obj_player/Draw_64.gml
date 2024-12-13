@@ -24,6 +24,6 @@ draw_text( 1292, 4, obj_game.curr_hour_text )
 if ( obj_game.intro_timer-- > 0 ) {
 	
 	draw_set_font(fnt_intro)
-	draw_text( 512, 180, obj_game.intro_text )
+	draw_text( 440, 180, obj_game.intro_text )
 	
 }

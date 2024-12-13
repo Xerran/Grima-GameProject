@@ -92,3 +92,6 @@ specialty_rate = 3
 // What type of Enemy are we going to Spawn?
 spawn_type = 0
 
+// What is the sound range?
+range = 500
+

@@ -33,6 +33,9 @@ if ( !response_text ) {
 				
 				obj_game.lit++
 				
+				// We also play a sound to signal the fire is lit
+				audio_play_sound_at( snd_brazier, x, y, 0, 50, 100, 2, true, 1, 0.5, 0.2, 1 )
+				
 			}
 			
 		// Does this Text belong to a Window?
@@ -52,6 +55,9 @@ if ( !response_text ) {
 				my_instance.curr_hp = my_instance.hp_max
 				obj_player.blessed_wood--
 				my_instance.text_created = false
+				
+				// Also play a sound
+				audio_play_sound_at( snd_blockade, x, y, 0, 50, 100, 1, false, 1, 0.5, 0.2, 1.5 )
 				
 			}
 			

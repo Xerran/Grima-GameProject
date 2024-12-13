@@ -94,6 +94,9 @@ sword_cost = 15
 // This is the Sword object our Player shall wield
 pl_sword = noone
 
+// Is the Grima Overlay currently up?
+overlay = false
+
 // Finally, we create a new light for use with the Player
 my_light = light_create( global.system, spr_light, 0.25, c_gray, 0.5, 0, true )
 light_set_position( my_light, x, y )

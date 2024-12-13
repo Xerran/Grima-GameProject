@@ -11,7 +11,7 @@ aggression = PREP
 move_success_rate = PREP
 
 // What is our current room?
-curr_room = 0
+curr_room = 1
 
 // What is the current gameplay Hour?
 curr_hour = obj_game.curr_hour
@@ -44,8 +44,19 @@ curr_countdown = countdown_max
 // How many total Windows are in this area?
 windows_total = 0
 
-// How many Windows have we already trapped?
-windows_trapped = 0
+// How many Windows have we already gone through?
+windows_count = 0
+
+// What is the current Window we are checking?
+curr_window = noone
+
+// What is the numeric value of the Window we are targeting?
+target = 0
+
+// Is there no valid target for Grima in his current Room?
+no_valid_target = false
+
+
 
 /*
  * OVERLAY SECTION
@@ -66,14 +77,20 @@ sprite_timer = game_get_speed( gamespeed_fps ) * 0.5
 // Can we currently Flash?
 can_flash = true
 
-// How long do we have to wait for the Flash to recharge? (Currently 20 seconds)
-flash_charge = game_get_speed( gamespeed_fps ) * 20
+// How long does the Flash effect last? (Currently 1 second)
+flash_effect_timer = game_get_speed( gamespeed_fps )
+
+// How long do we have to wait for the Flash to recharge? (Currently 60 seconds)
+flash_charge = game_get_speed( gamespeed_fps ) * 45
 
 // How long have we been waiting for the Flash to recharge?
-flash_timer = 0
+flash_timer = flash_charge
 
 // Retrieves the id of the current Camera
 camera_id = view_get_camera( 0 )
+
+// What is the current frame of the Static Overlay?
+static_frame = 0
 
 
 
@@ -93,6 +110,9 @@ tl_sprite = spr_tl_camera
 tl_window_1 = instance_nearest( 192, 96, obj_window )
 tl_window_2 = instance_nearest( 448, 96, obj_window )
 
+// The array of Windows for this Room
+tl_array = [ tl_window_1, tl_window_2 ]
+
 
 
 // Room 2 - the Top Right Corner of the Fortress
@@ -104,6 +124,9 @@ tr_sprite = spr_tl_camera
 // The Windows for Room 2 - there are two
 tr_window_1 = instance_nearest( 1344, 96, obj_window )
 tr_window_2 = instance_nearest( 1568, 320, obj_window )
+
+// The array of Windows for this Room
+tr_array = [ tr_window_1, tr_window_2 ]
 
 
 
@@ -118,6 +141,9 @@ bl_window_1 = instance_nearest( 96, 896, obj_window )
 bl_window_2 = instance_nearest( 96, 1024, obj_window )
 bl_window_3 = instance_nearest( 352, 1184, obj_window )
 
+// The array of Windows for this Room
+bl_array = [ bl_window_1, bl_window_2, bl_window_3 ]
+
 
 
 // Room 4 - the Bottom Right Corner of the Fortress
@@ -130,5 +156,8 @@ br_sprite = spr_tl_camera
 br_window_1 = instance_nearest( 1248, 1184, obj_window )
 br_window_2 = instance_nearest( 1376, 1184, obj_window )
 br_window_3 = instance_nearest( 1568, 960, obj_window )
+
+// The array of Windows for this Room
+br_array = [ br_window_1, br_window_2, br_window_3 ]
 
 

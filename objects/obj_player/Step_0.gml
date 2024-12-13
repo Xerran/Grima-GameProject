@@ -1,5 +1,9 @@
 /// @description Governs Player movement and actions every frame
 
+// Let's retrieve if the Grima Overlay is up or not
+overlay = obj_grima_controller.show_overlay
+
+
 /*
  * PLAYER MOVEMENT AND DIRECTIONALS
  */
@@ -97,6 +101,35 @@ var _gun_tip_y = pl_gun.y - 1
 // Here, we will set the current position of the Light following the Player
 light_set_position( my_light, x, y )
 
+// We will also set the Audio Listener's position to be the Player's position
+audio_listener_set_position( 0, x, y, 0)
+
+// If the Brazier sound is playing, we diminish it relative to Player positioning
+if ( audio_is_playing( snd_brazier ) ) { 
+			
+	// We make it so that the sound will play for the closest Brazier the Player has lit
+	var _nearest_brazier = instance_nearest( x, y, obj_brazier )
+	var _distance_to_brazier = distance_to_object( _nearest_brazier )
+	
+	if ( _distance_to_brazier < 1000 && _nearest_brazier.is_lit ) {
+			
+		var _gain = ( 500 - _distance_to_brazier ) / 1000
+			
+		// Clamp _gain to 0
+		if ( _gain < 0 ) {
+				
+			_gain = 0
+				
+		}
+			
+			
+		audio_sound_gain( snd_brazier, _gain, 0 )
+				
+				
+	}
+			
+}
+
 
 /*
  *
@@ -114,7 +147,7 @@ light_set_position( my_light, x, y )
 
 // First we check to make sure the Player is not already Dashing, and if they are pressing
 // the Space button
-if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash ) {
+if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash and !overlay ) {
 	
 	// First off, a Dash is only allowable if the Player is already moving, so
 	// we must make sure they are already moving in at least one direction
@@ -139,6 +172,9 @@ if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash ) {
 			
 			// Initialize our Dash array for use in the Dash action
 			dash_array = []
+			
+			// Play a sound for the Dash
+			audio_play_sound( snd_dash, 1, false, 0.3, 0, 0.8 )
 	
 		}
 		
@@ -184,7 +220,7 @@ if ( keyboard_check_pressed( vk_space ) and !is_dashing and can_dash ) {
 
 // We check if the Player has pressed the Left Mouse Button, as well as make sure
 // they are not in the middle of a Dash
-if ( mouse_check_button( mb_left ) and !is_dashing and !is_swinging ) {
+if ( mouse_check_button( mb_left ) and !is_dashing and !is_swinging and !overlay ) {
 	
 	if ( can_shoot && bullets > 0 ) {
 		can_shoot = false
@@ -218,7 +254,7 @@ if ( mouse_check_button( mb_left ) and !is_dashing and !is_swinging ) {
 
 // We check if the Player has pressed the Right Mouse Button, as well as make sure
 // they are not in the middle of a Dash
-if ( mouse_check_button( mb_right ) and !is_dashing and !is_swinging ) {
+if ( mouse_check_button( mb_right ) and !is_dashing and !is_swinging and !overlay ) {
 	
 	// Have to make sure we can Swing our Sword before we actually do
 	if ( can_swing ) {
@@ -238,6 +274,9 @@ if ( mouse_check_button( mb_right ) and !is_dashing and !is_swinging ) {
 		// Initialize the Scaling variables for the Sword
 		pl_sword.image_xscale = 2
 		pl_sword.image_yscale = 2
+		
+		// Play a sound for the Sword swinging
+		audio_play_sound( snd_sword, 1, false, 0.3, 0, 0.8 )
 		
 		// Finally, what was the aim_dir when we summoned the Sword?
 		orig_dir = aim_dir

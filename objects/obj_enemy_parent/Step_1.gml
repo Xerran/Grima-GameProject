@@ -35,7 +35,7 @@ if ( distance_to_object( _nearest_searchable ) < 32 ) {
 }
 
 // Searchables take Priority, but we should also accomodate Braziers
-if ( distance_to_object( _nearest_brazier ) < 64 ) {
+if ( distance_to_object( _nearest_brazier ) < 32 ) {
 	
 	// If we're below the Brazier, then we should appear in front of it
 	if ( _nearest_brazier.y < y ) {

@@ -40,7 +40,7 @@ if ( my_room != noone && instance_exists( my_room ) ) {
 			if ( timer++ < timer_max ) {
 				
 				// If we haven't yet created our Text object, let's do that
-				if ( !text_created ) {
+				if ( !instance_exists( my_text ) or my_text == noone ) {
 					
 					my_text = instance_create_layer( x, y - 24, "Text", obj_text )
 					my_text.is_altar_text = true

@@ -57,6 +57,7 @@ hour_total = 6
 
 
 
+
 /*
  * ENEMY SPAWNER VALUES
  */
@@ -160,14 +161,14 @@ curr_damage_rate = low_damage_rate
 
 // Aggression Values
 
-// "Low" aggression - Makes a move every 20 seconds
-low_aggression = game_get_speed( gamespeed_fps ) * 20
+// "Low" aggression - Makes a move every 15 seconds
+low_aggression = game_get_speed( gamespeed_fps ) * 15
 
-// "Medium" aggression - Makes a move every 15 seconds
-medium_aggression = game_get_speed( gamespeed_fps ) * 15
+// "Medium" aggression - Makes a move every 10 seconds
+medium_aggression = game_get_speed( gamespeed_fps ) * 10
 
-// "High" aggression - Makes a move every 10 seconds
-high_aggression= game_get_speed( gamespeed_fps ) * 10
+// "High" aggression - Makes a move every 8 seconds
+high_aggression= game_get_speed( gamespeed_fps ) * 8
 
 // What is the current aggression?
 curr_aggression = low_aggression
@@ -175,14 +176,14 @@ curr_aggression = low_aggression
 
 // Move Success Rate Values
 
-// "Low" chance of movement success for Grima (20% chance)
-low_move_success = 4
+// "Low" chance of movement success for Grima (25% chance)
+low_move_success = 3
 
-// "Medium" chance of movement success for Grima (25% chance)
-medium_move_success = 3
+// "Medium" chance of movement success for Grima (33% chance)
+medium_move_success = 2
 
-// "High" chance of movement success for Grima (33% chance)
-high_move_success = 2
+// "High" chance of movement success for Grima (50% chance)
+high_move_success = 1
 
 // What is the current movement success chance?
 curr_move_success = low_move_success

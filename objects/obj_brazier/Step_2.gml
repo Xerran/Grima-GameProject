@@ -1,4 +1,4 @@
-/// @description Destroys Brazier if applicable
+/// @description Destroys Brazier if applicable, and plays Damage sound
 
 if ( curr_hp <= 0 ) {
 	
@@ -10,6 +10,13 @@ if ( curr_hp <= 0 ) {
 		
 		obj_game.lit--
 		
+		// Also make sure the sound is turned off
+		if ( audio_is_playing( snd_brazier ) ) {
+			
+			audio_stop_sound( snd_brazier )
+			
+		}
+		
 	}
 	
 	// Delete the Light attached to this instance
@@ -20,5 +27,14 @@ if ( curr_hp <= 0 ) {
 	
 	// Destroy this Instance
 	instance_destroy()
+	
+}
+
+// Plays sound when damaged
+if ( invulnerable and !played_sound ) {
+	
+	audio_play_sound( snd_brazier_damage, 1, false, 0.1 )
+	
+	played_sound = true
 	
 }

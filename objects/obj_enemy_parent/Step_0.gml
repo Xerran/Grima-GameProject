@@ -202,7 +202,15 @@ switch ( state ) {
 						
 					}  else {
 						
-						attack_dir = point_direction(x, y, my_brazier.x, my_brazier.y )
+						if ( instance_exists( my_brazier ) ) {
+							
+							attack_dir = point_direction(x, y, my_brazier.x, my_brazier.y )
+							
+						} else {
+							
+							attack_dir = point_direction(x, y, obj_player.x, obj_player.y )
+							
+						}
 						
 					}
 			
