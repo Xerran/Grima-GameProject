@@ -278,9 +278,10 @@ switch ( curr_hour ) {
 		
 		// Fixes issue where Game would "freeze" - really Room was just being constantly
 		// reassigned to rm_victory
-		if ( room_get_name( room ) != room_get_name( rm_victory ) ) {
+		if ( room_get_name( room ) != room_get_name( rm_victory ) && !won ) {
 			
 			room_goto( rm_victory )
+			won = true
 			
 		}
 		

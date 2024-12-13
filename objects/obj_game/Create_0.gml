@@ -52,6 +52,9 @@ curr_hour = -1
 // How many Hours must the Player survive to win?
 hour_total = 6
 
+// Has the Player won?
+won = false
+
 // Macro for absolutely no spawns, engagements, or aggression from Grima
 #macro PREP			-99
 
