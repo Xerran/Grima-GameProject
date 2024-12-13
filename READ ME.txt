@@ -16,7 +16,15 @@ October Crow Font created by Sinister Fonts -- https://www.1001fonts.com/october
 
 MUSIC CREDITS
 
+space_graveyard.mp3 by TinyWorlds -- https://opengameart.org/content/space-graveyard-ambient-track -- License: Creative Commons 0
 
+evil.ogg by congusbongus -- https://opengameart.org/content/a-lurking-evil-horror-ambience -- License: Creative Commons 0
+
+heartbeat.mp3 by tcarisland -- https://opengameart.org/content/heartbeat -- License: Attribution 4.0
+
+The Surreal Truth.mp3 by Joth -- https://opengameart.org/content/ambience-pack-1-sci-fi-horror -- License: Creative Commons 0
+
+Forest_Ambience by TinyWorlds -- https://opengameart.org/content/forest-ambience -- License: Creative Commons 0
 
 ---
 
@@ -49,6 +57,40 @@ Wooden Door breaks by Saladsounds -- https://freesound.org/s/723974/ -- License:
 Wooden Box Breaking Sound Effects.wav by gronnie -- https://freesound.org/s/563175/ -- License: Attribution 4.0
 
 Horror Stinger 14_Cruel Fate.wav by Ulrich_Wehner -- https://freesound.org/s/638397/ -- License: Attribution 4.0
+
+chopper screech.mp3 by Calamity.chr -- https://freesound.org/s/638657/ -- License: Attribution 4.0
+
+Elk Dragon Roar.mp3 by J.R.Mythical -- https://freesound.org/s/563686/ -- License: Creative Commons 0
+
+elk.2.wav by lwdickens -- https://freesound.org/s/263488/ -- License: Creative Commons 0
+
+edsscreamr.mp3 by scrbun -- https://freesound.org/s/583402/ -- License: Creative Commons 0
+
+Shot,scifi,powerdown.wav by CJDeets -- https://freesound.org/s/476740/ -- License: Attribution 4.0
+
+Monster AAH!.wav by MATRIXXX_ -- https://freesound.org/s/506514/ -- License: Creative Commons 0
+
+CreepyLaugh.wav by eurekaliza94 -- https://freesound.org/s/370166/ -- License: Creative Commons 0
+
+creatures-loud-buzz.wav by MinigunFiend -- https://freesound.org/s/175210/ -- License: Creative Commons 0
+
+Sword Impact by TheBuilder15 -- https://freesound.org/s/434896/ -- License: Creative Commons 0
+
+Dash Sound Effect by ArTiX.0 -- https://freesound.org/s/742717/ -- License: Creative Commons 0
+
+male_hurt9.ogg by micahlg -- https://freesound.org/s/413186/ -- License: Creative Commons 0
+
+male_hurt8.ogg by micahlg -- https://freesound.org/s/413185/ -- License: Creative Commons 0
+
+Gavel by Science_Witch -- https://freesound.org/s/762733/ -- License: Attribution 4.0
+
+flames sizzling of a bonfire - FIRE by florianreichelt -- https://freesound.org/s/563012/ -- License: Creative Commons 0
+
+Heal - Rpg by colorsCrimsonTears -- https://freesound.org/s/562292/ -- License: Creative Commons 0
+
+LightRingingClang.mp3 by wilhellboy -- https://freesound.org/s/351372/ -- License: Creative Commons 0
+
+
 
 
 
